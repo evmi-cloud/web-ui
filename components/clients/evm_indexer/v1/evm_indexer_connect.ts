@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetLatestStoreLogsRequest, GetLatestStoreLogsResponse, GetStoreLogsRequest, GetStoreLogsResponse, GetStoreLogsStreamRequest, GetStoreLogsStreamResponse, GetStoresRequest, GetStoresResponse, StartPipelineRequest, StartPipelineResponse, StopPipelineRequest, StopPipelineResponse } from "./evm_indexer_pb";
+import { CreateEvmBlockchainRequest, CreateEvmBlockchainResponse, CreateEvmJsonAbiRequest, CreateEvmJsonAbiResponse, CreateEvmLogPipelineRequest, CreateEvmLogPipelineResponse, CreateEvmLogSourceRequest, CreateEvmLogSourceResponse, CreateEvmLogStoreRequest, CreateEvmLogStoreResponse, DeleteEvmBlockchainRequest, DeleteEvmBlockchainResponse, DeleteEvmJsonAbiRequest, DeleteEvmJsonAbiResponse, DeleteEvmLogPipelineRequest, DeleteEvmLogPipelineResponse, DeleteEvmLogSourceRequest, DeleteEvmLogSourceResponse, DeleteEvmLogStoreRequest, DeleteEvmLogStoreResponse, GetEvmBlockchainRequest, GetEvmBlockchainResponse, GetEvmiInstanceRequest, GetEvmiInstanceResponse, GetEvmJsonAbiRequest, GetEvmJsonAbiResponse, GetEvmLogPipelineRequest, GetEvmLogPipelineResponse, GetEvmLogSourceRequest, GetEvmLogSourceResponse, GetEvmLogStoreRequest, GetEvmLogStoreResponse, ListEvmBlockchainsRequest, ListEvmBlockchainsResponse, ListEvmiInstancesRequest, ListEvmiInstancesResponse, ListEvmJsonAbisRequest, ListEvmJsonAbisResponse, ListEvmLogPipelinesRequest, ListEvmLogPipelinesResponse, ListEvmLogSourcesRequest, ListEvmLogSourcesResponse, ListEvmLogsRequest, ListEvmLogsResponse, ListEvmLogStoresRequest, ListEvmLogStoresResponse, ListEvmTransactionsRequest, ListEvmTransactionsResponse, StartPipelineRequest, StartPipelineResponse, StopPipelineRequest, StopPipelineResponse, UpdateEvmBlockchainRequest, UpdateEvmBlockchainResponse, UpdateEvmJsonAbiRequest, UpdateEvmJsonAbiResponse, UpdateEvmLogPipelineRequest, UpdateEvmLogPipelineResponse, UpdateEvmLogSourceRequest, UpdateEvmLogSourceResponse, UpdateEvmLogStoreRequest, UpdateEvmLogStoreResponse } from "./evm_indexer_pb.ts";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -13,12 +13,211 @@ export const EvmIndexerService = {
   typeName: "evm_indexer.v1.EvmIndexerService",
   methods: {
     /**
-     * @generated from rpc evm_indexer.v1.EvmIndexerService.GetStores
+     * EvmiInstance
+     *
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.GetEvmiInstance
      */
-    getStores: {
-      name: "GetStores",
-      I: GetStoresRequest,
-      O: GetStoresResponse,
+    getEvmiInstance: {
+      name: "GetEvmiInstance",
+      I: GetEvmiInstanceRequest,
+      O: GetEvmiInstanceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.ListEvmiInstances
+     */
+    listEvmiInstances: {
+      name: "ListEvmiInstances",
+      I: ListEvmiInstancesRequest,
+      O: ListEvmiInstancesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * EvmBlockchain
+     *
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.CreateEvmBlockchain
+     */
+    createEvmBlockchain: {
+      name: "CreateEvmBlockchain",
+      I: CreateEvmBlockchainRequest,
+      O: CreateEvmBlockchainResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.GetEvmBlockchain
+     */
+    getEvmBlockchain: {
+      name: "GetEvmBlockchain",
+      I: GetEvmBlockchainRequest,
+      O: GetEvmBlockchainResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.UpdateEvmBlockchain
+     */
+    updateEvmBlockchain: {
+      name: "UpdateEvmBlockchain",
+      I: UpdateEvmBlockchainRequest,
+      O: UpdateEvmBlockchainResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.ListEvmBlockchains
+     */
+    listEvmBlockchains: {
+      name: "ListEvmBlockchains",
+      I: ListEvmBlockchainsRequest,
+      O: ListEvmBlockchainsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.DeleteEvmBlockchain
+     */
+    deleteEvmBlockchain: {
+      name: "DeleteEvmBlockchain",
+      I: DeleteEvmBlockchainRequest,
+      O: DeleteEvmBlockchainResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * EvmJsonAbi
+     *
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.CreateEvmJsonAbi
+     */
+    createEvmJsonAbi: {
+      name: "CreateEvmJsonAbi",
+      I: CreateEvmJsonAbiRequest,
+      O: CreateEvmJsonAbiResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.GetEvmJsonAbi
+     */
+    getEvmJsonAbi: {
+      name: "GetEvmJsonAbi",
+      I: GetEvmJsonAbiRequest,
+      O: GetEvmJsonAbiResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.UpdateEvmJsonAbi
+     */
+    updateEvmJsonAbi: {
+      name: "UpdateEvmJsonAbi",
+      I: UpdateEvmJsonAbiRequest,
+      O: UpdateEvmJsonAbiResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.ListEvmJsonAbis
+     */
+    listEvmJsonAbis: {
+      name: "ListEvmJsonAbis",
+      I: ListEvmJsonAbisRequest,
+      O: ListEvmJsonAbisResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.DeleteEvmJsonAbi
+     */
+    deleteEvmJsonAbi: {
+      name: "DeleteEvmJsonAbi",
+      I: DeleteEvmJsonAbiRequest,
+      O: DeleteEvmJsonAbiResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * EvmLogStore
+     *
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.CreateEvmLogStore
+     */
+    createEvmLogStore: {
+      name: "CreateEvmLogStore",
+      I: CreateEvmLogStoreRequest,
+      O: CreateEvmLogStoreResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.GetEvmLogStore
+     */
+    getEvmLogStore: {
+      name: "GetEvmLogStore",
+      I: GetEvmLogStoreRequest,
+      O: GetEvmLogStoreResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.UpdateEvmLogStore
+     */
+    updateEvmLogStore: {
+      name: "UpdateEvmLogStore",
+      I: UpdateEvmLogStoreRequest,
+      O: UpdateEvmLogStoreResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.ListEvmLogStores
+     */
+    listEvmLogStores: {
+      name: "ListEvmLogStores",
+      I: ListEvmLogStoresRequest,
+      O: ListEvmLogStoresResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.DeleteEvmLogStore
+     */
+    deleteEvmLogStore: {
+      name: "DeleteEvmLogStore",
+      I: DeleteEvmLogStoreRequest,
+      O: DeleteEvmLogStoreResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * EvmLogPipeline
+     *
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.CreateEvmLogPipeline
+     */
+    createEvmLogPipeline: {
+      name: "CreateEvmLogPipeline",
+      I: CreateEvmLogPipelineRequest,
+      O: CreateEvmLogPipelineResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.GetEvmLogPipeline
+     */
+    getEvmLogPipeline: {
+      name: "GetEvmLogPipeline",
+      I: GetEvmLogPipelineRequest,
+      O: GetEvmLogPipelineResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.UpdateEvmLogPipeline
+     */
+    updateEvmLogPipeline: {
+      name: "UpdateEvmLogPipeline",
+      I: UpdateEvmLogPipelineRequest,
+      O: UpdateEvmLogPipelineResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.ListEvmLogPipelines
+     */
+    listEvmLogPipelines: {
+      name: "ListEvmLogPipelines",
+      I: ListEvmLogPipelinesRequest,
+      O: ListEvmLogPipelinesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.DeleteEvmLogPipeline
+     */
+    deleteEvmLogPipeline: {
+      name: "DeleteEvmLogPipeline",
+      I: DeleteEvmLogPipelineRequest,
+      O: DeleteEvmLogPipelineResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -40,31 +239,73 @@ export const EvmIndexerService = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc evm_indexer.v1.EvmIndexerService.GetStoreLogs
+     * EvmLogSource
+     *
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.CreateEvmLogSource
      */
-    getStoreLogs: {
-      name: "GetStoreLogs",
-      I: GetStoreLogsRequest,
-      O: GetStoreLogsResponse,
+    createEvmLogSource: {
+      name: "CreateEvmLogSource",
+      I: CreateEvmLogSourceRequest,
+      O: CreateEvmLogSourceResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc evm_indexer.v1.EvmIndexerService.GetLatestsStoreLogs
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.GetEvmLogSource
      */
-    getLatestsStoreLogs: {
-      name: "GetLatestsStoreLogs",
-      I: GetLatestStoreLogsRequest,
-      O: GetLatestStoreLogsResponse,
+    getEvmLogSource: {
+      name: "GetEvmLogSource",
+      I: GetEvmLogSourceRequest,
+      O: GetEvmLogSourceResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc evm_indexer.v1.EvmIndexerService.GetStoreLogStream
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.UpdateEvmLogSource
      */
-    getStoreLogStream: {
-      name: "GetStoreLogStream",
-      I: GetStoreLogsStreamRequest,
-      O: GetStoreLogsStreamResponse,
-      kind: MethodKind.ServerStreaming,
+    updateEvmLogSource: {
+      name: "UpdateEvmLogSource",
+      I: UpdateEvmLogSourceRequest,
+      O: UpdateEvmLogSourceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.ListEvmLogSources
+     */
+    listEvmLogSources: {
+      name: "ListEvmLogSources",
+      I: ListEvmLogSourcesRequest,
+      O: ListEvmLogSourcesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.DeleteEvmLogSource
+     */
+    deleteEvmLogSource: {
+      name: "DeleteEvmLogSource",
+      I: DeleteEvmLogSourceRequest,
+      O: DeleteEvmLogSourceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * EvmLog
+     *
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.ListEvmLogs
+     */
+    listEvmLogs: {
+      name: "ListEvmLogs",
+      I: ListEvmLogsRequest,
+      O: ListEvmLogsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * EvmTransaction
+     *
+     * @generated from rpc evm_indexer.v1.EvmIndexerService.ListEvmTransactions
+     */
+    listEvmTransactions: {
+      name: "ListEvmTransactions",
+      I: ListEvmTransactionsRequest,
+      O: ListEvmTransactionsResponse,
+      kind: MethodKind.Unary,
     },
   }
 } as const;

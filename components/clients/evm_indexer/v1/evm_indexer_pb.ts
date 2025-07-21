@@ -7,13 +7,414 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 
 /**
- * @generated from message evm_indexer.v1.LogSource
+ * @generated from message evm_indexer.v1.EvmiInstance
  */
-export class LogSource extends Message<LogSource> {
+export class EvmiInstance extends Message<EvmiInstance> {
   /**
-   * @generated from field: string name = 1;
+   * @generated from field: optional uint32 id = 1;
+   */
+  id?: number;
+
+  /**
+   * @generated from field: uint64 instance_id = 2;
+   */
+  instanceId = protoInt64.zero;
+
+  /**
+   * @generated from field: string ipv4 = 3;
+   */
+  ipv4 = "";
+
+  /**
+   * @generated from field: string status = 4;
+   */
+  status = "";
+
+  /**
+   * @generated from field: optional uint32 created_at = 5;
+   */
+  createdAt?: number;
+
+  /**
+   * @generated from field: optional uint32 updated_at = 6;
+   */
+  updatedAt?: number;
+
+  /**
+   * @generated from field: optional uint32 deleted_at = 7;
+   */
+  deletedAt?: number;
+
+  constructor(data?: PartialMessage<EvmiInstance>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.EvmiInstance";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 2, name: "instance_id", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 3, name: "ipv4", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "created_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 6, name: "updated_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 7, name: "deleted_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvmiInstance {
+    return new EvmiInstance().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvmiInstance {
+    return new EvmiInstance().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvmiInstance {
+    return new EvmiInstance().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EvmiInstance | PlainMessage<EvmiInstance> | undefined, b: EvmiInstance | PlainMessage<EvmiInstance> | undefined): boolean {
+    return proto3.util.equals(EvmiInstance, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.EvmBlockchain
+ */
+export class EvmBlockchain extends Message<EvmBlockchain> {
+  /**
+   * @generated from field: optional uint32 id = 1;
+   */
+  id?: number;
+
+  /**
+   * @generated from field: uint64 chain_id = 2;
+   */
+  chainId = protoInt64.zero;
+
+  /**
+   * @generated from field: string name = 3;
    */
   name = "";
+
+  /**
+   * @generated from field: string rpc_url = 4;
+   */
+  rpcUrl = "";
+
+  /**
+   * @generated from field: uint64 block_range = 5;
+   */
+  blockRange = protoInt64.zero;
+
+  /**
+   * @generated from field: uint64 block_slice = 6;
+   */
+  blockSlice = protoInt64.zero;
+
+  /**
+   * @generated from field: uint64 pull_interval = 7;
+   */
+  pullInterval = protoInt64.zero;
+
+  /**
+   * @generated from field: uint64 rpc_max_batch_size = 8;
+   */
+  rpcMaxBatchSize = protoInt64.zero;
+
+  /**
+   * @generated from field: optional uint32 created_at = 9;
+   */
+  createdAt?: number;
+
+  /**
+   * @generated from field: optional uint32 updated_at = 10;
+   */
+  updatedAt?: number;
+
+  /**
+   * @generated from field: optional uint32 deleted_at = 11;
+   */
+  deletedAt?: number;
+
+  constructor(data?: PartialMessage<EvmBlockchain>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.EvmBlockchain";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 2, name: "chain_id", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "rpc_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "block_range", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 6, name: "block_slice", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 7, name: "pull_interval", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 8, name: "rpc_max_batch_size", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 9, name: "created_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 10, name: "updated_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 11, name: "deleted_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvmBlockchain {
+    return new EvmBlockchain().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvmBlockchain {
+    return new EvmBlockchain().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvmBlockchain {
+    return new EvmBlockchain().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EvmBlockchain | PlainMessage<EvmBlockchain> | undefined, b: EvmBlockchain | PlainMessage<EvmBlockchain> | undefined): boolean {
+    return proto3.util.equals(EvmBlockchain, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.EvmJsonAbi
+ */
+export class EvmJsonAbi extends Message<EvmJsonAbi> {
+  /**
+   * @generated from field: uint32 id = 1;
+   */
+  id = 0;
+
+  /**
+   * @generated from field: string contract_name = 2;
+   */
+  contractName = "";
+
+  /**
+   * @generated from field: string content = 3;
+   */
+  content = "";
+
+  /**
+   * @generated from field: uint32 created_at = 4;
+   */
+  createdAt = 0;
+
+  /**
+   * @generated from field: uint32 updated_at = 5;
+   */
+  updatedAt = 0;
+
+  /**
+   * @generated from field: optional uint32 deleted_at = 6;
+   */
+  deletedAt?: number;
+
+  constructor(data?: PartialMessage<EvmJsonAbi>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.EvmJsonAbi";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 2, name: "contract_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "created_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 5, name: "updated_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 6, name: "deleted_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvmJsonAbi {
+    return new EvmJsonAbi().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvmJsonAbi {
+    return new EvmJsonAbi().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvmJsonAbi {
+    return new EvmJsonAbi().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EvmJsonAbi | PlainMessage<EvmJsonAbi> | undefined, b: EvmJsonAbi | PlainMessage<EvmJsonAbi> | undefined): boolean {
+    return proto3.util.equals(EvmJsonAbi, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.EvmLogStore
+ */
+export class EvmLogStore extends Message<EvmLogStore> {
+  /**
+   * @generated from field: uint32 id = 1;
+   */
+  id = 0;
+
+  /**
+   * @generated from field: string identifier = 2;
+   */
+  identifier = "";
+
+  /**
+   * @generated from field: string description = 3;
+   */
+  description = "";
+
+  /**
+   * @generated from field: string store_type = 4;
+   */
+  storeType = "";
+
+  /**
+   * @generated from field: string store_config_json = 5;
+   */
+  storeConfigJson = "";
+
+  /**
+   * @generated from field: uint32 created_at = 6;
+   */
+  createdAt = 0;
+
+  /**
+   * @generated from field: uint32 updated_at = 7;
+   */
+  updatedAt = 0;
+
+  /**
+   * @generated from field: optional uint32 deleted_at = 8;
+   */
+  deletedAt?: number;
+
+  constructor(data?: PartialMessage<EvmLogStore>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.EvmLogStore";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 2, name: "identifier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "store_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "store_config_json", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "created_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 7, name: "updated_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 8, name: "deleted_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvmLogStore {
+    return new EvmLogStore().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvmLogStore {
+    return new EvmLogStore().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvmLogStore {
+    return new EvmLogStore().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EvmLogStore | PlainMessage<EvmLogStore> | undefined, b: EvmLogStore | PlainMessage<EvmLogStore> | undefined): boolean {
+    return proto3.util.equals(EvmLogStore, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.EvmLogPipeline
+ */
+export class EvmLogPipeline extends Message<EvmLogPipeline> {
+  /**
+   * @generated from field: uint32 id = 1;
+   */
+  id = 0;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string type = 3;
+   */
+  type = "";
+
+  /**
+   * @generated from field: uint32 evmi_instance_id = 4;
+   */
+  evmiInstanceId = 0;
+
+  /**
+   * @generated from field: uint32 evm_blockchain_id = 5;
+   */
+  evmBlockchainId = 0;
+
+  /**
+   * @generated from field: uint32 evm_log_store_id = 6;
+   */
+  evmLogStoreId = 0;
+
+  /**
+   * @generated from field: uint32 created_at = 7;
+   */
+  createdAt = 0;
+
+  /**
+   * @generated from field: uint32 updated_at = 8;
+   */
+  updatedAt = 0;
+
+  /**
+   * @generated from field: optional uint32 deleted_at = 9;
+   */
+  deletedAt?: number;
+
+  constructor(data?: PartialMessage<EvmLogPipeline>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.EvmLogPipeline";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "evmi_instance_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 5, name: "evm_blockchain_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 6, name: "evm_log_store_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 7, name: "created_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 8, name: "updated_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 9, name: "deleted_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvmLogPipeline {
+    return new EvmLogPipeline().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvmLogPipeline {
+    return new EvmLogPipeline().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvmLogPipeline {
+    return new EvmLogPipeline().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EvmLogPipeline | PlainMessage<EvmLogPipeline> | undefined, b: EvmLogPipeline | PlainMessage<EvmLogPipeline> | undefined): boolean {
+    return proto3.util.equals(EvmLogPipeline, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.EvmLogSource
+ */
+export class EvmLogSource extends Message<EvmLogSource> {
+  /**
+   * @generated from field: uint32 id = 1;
+   */
+  id = 0;
 
   /**
    * @generated from field: string type = 2;
@@ -21,141 +422,111 @@ export class LogSource extends Message<LogSource> {
   type = "";
 
   /**
-   * @generated from field: repeated evm_indexer.v1.LogSourceContract contracts = 3;
-   */
-  contracts: LogSourceContract[] = [];
-
-  /**
-   * @generated from field: string topic = 4;
-   */
-  topic = "";
-
-  /**
-   * @generated from field: uint64 start_block = 5;
+   * @generated from field: uint64 start_block = 3;
    */
   startBlock = protoInt64.zero;
 
   /**
-   * @generated from field: uint64 latest_block_indexed = 6;
+   * @generated from field: uint64 sync_block = 4;
    */
-  latestBlockIndexed = protoInt64.zero;
+  syncBlock = protoInt64.zero;
 
-  constructor(data?: PartialMessage<LogSource>) {
+  /**
+   * Nullable fields
+   *
+   * @generated from field: optional string address = 5;
+   */
+  address?: string;
+
+  /**
+   * @generated from field: optional string topic0 = 6;
+   */
+  topic0?: string;
+
+  /**
+   * @generated from field: repeated string topic_filters = 7;
+   */
+  topicFilters: string[] = [];
+
+  /**
+   * @generated from field: optional int32 factory_child_evm_json_abi = 8;
+   */
+  factoryChildEvmJsonAbi?: number;
+
+  /**
+   * @generated from field: optional string factory_creation_function_name = 9;
+   */
+  factoryCreationFunctionName?: string;
+
+  /**
+   * @generated from field: optional string factory_creation_address_log_arg = 10;
+   */
+  factoryCreationAddressLogArg?: string;
+
+  /**
+   * @generated from field: uint32 evm_log_pipeline_id = 11;
+   */
+  evmLogPipelineId = 0;
+
+  /**
+   * @generated from field: uint32 evm_json_abi_id = 12;
+   */
+  evmJsonAbiId = 0;
+
+  /**
+   * @generated from field: uint32 created_at = 13;
+   */
+  createdAt = 0;
+
+  /**
+   * @generated from field: uint32 updated_at = 14;
+   */
+  updatedAt = 0;
+
+  /**
+   * @generated from field: optional uint32 deleted_at = 15;
+   */
+  deletedAt?: number;
+
+  constructor(data?: PartialMessage<EvmLogSource>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "evm_indexer.v1.LogSource";
+  static readonly typeName = "evm_indexer.v1.EvmLogSource";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 2, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "contracts", kind: "message", T: LogSourceContract, repeated: true },
-    { no: 4, name: "topic", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "start_block", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 6, name: "latest_block_indexed", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 3, name: "start_block", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 4, name: "sync_block", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 5, name: "address", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 6, name: "topic0", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 7, name: "topic_filters", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 8, name: "factory_child_evm_json_abi", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 9, name: "factory_creation_function_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 10, name: "factory_creation_address_log_arg", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 11, name: "evm_log_pipeline_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 12, name: "evm_json_abi_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 13, name: "created_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 14, name: "updated_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 15, name: "deleted_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LogSource {
-    return new LogSource().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvmLogSource {
+    return new EvmLogSource().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LogSource {
-    return new LogSource().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvmLogSource {
+    return new EvmLogSource().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LogSource {
-    return new LogSource().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvmLogSource {
+    return new EvmLogSource().fromJsonString(jsonString, options);
   }
 
-  static equals(a: LogSource | PlainMessage<LogSource> | undefined, b: LogSource | PlainMessage<LogSource> | undefined): boolean {
-    return proto3.util.equals(LogSource, a, b);
-  }
-}
-
-/**
- * @generated from message evm_indexer.v1.LogSourceContract
- */
-export class LogSourceContract extends Message<LogSourceContract> {
-  /**
-   * @generated from field: string address = 1;
-   */
-  address = "";
-
-  /**
-   * @generated from field: string contract_name = 2;
-   */
-  contractName = "";
-
-  constructor(data?: PartialMessage<LogSourceContract>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "evm_indexer.v1.LogSourceContract";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "contract_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LogSourceContract {
-    return new LogSourceContract().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LogSourceContract {
-    return new LogSourceContract().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LogSourceContract {
-    return new LogSourceContract().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: LogSourceContract | PlainMessage<LogSourceContract> | undefined, b: LogSourceContract | PlainMessage<LogSourceContract> | undefined): boolean {
-    return proto3.util.equals(LogSourceContract, a, b);
-  }
-}
-
-/**
- * @generated from message evm_indexer.v1.LogStoreStatus
- */
-export class LogStoreStatus extends Message<LogStoreStatus> {
-  /**
-   * @generated from field: string status = 1;
-   */
-  status = "";
-
-  /**
-   * @generated from field: uint64 latest_block_indexed = 2;
-   */
-  latestBlockIndexed = protoInt64.zero;
-
-  constructor(data?: PartialMessage<LogStoreStatus>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "evm_indexer.v1.LogStoreStatus";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "latest_block_indexed", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LogStoreStatus {
-    return new LogStoreStatus().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LogStoreStatus {
-    return new LogStoreStatus().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LogStoreStatus {
-    return new LogStoreStatus().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: LogStoreStatus | PlainMessage<LogStoreStatus> | undefined, b: LogStoreStatus | PlainMessage<LogStoreStatus> | undefined): boolean {
-    return proto3.util.equals(LogStoreStatus, a, b);
+  static equals(a: EvmLogSource | PlainMessage<EvmLogSource> | undefined, b: EvmLogSource | PlainMessage<EvmLogSource> | undefined): boolean {
+    return proto3.util.equals(EvmLogSource, a, b);
   }
 }
 
@@ -164,19 +535,19 @@ export class LogStoreStatus extends Message<LogStoreStatus> {
  */
 export class EvmMetadata extends Message<EvmMetadata> {
   /**
-   * @generated from field: string contract_name = 1;
+   * @generated from field: optional string contract_name = 1;
    */
-  contractName = "";
+  contractName?: string;
 
   /**
-   * @generated from field: string event_name = 2;
+   * @generated from field: optional string event_name = 2;
    */
-  eventName = "";
+  eventName?: string;
 
   /**
-   * @generated from field: string function_name = 3;
+   * @generated from field: optional string function_name = 3;
    */
-  functionName = "";
+  functionName?: string;
 
   /**
    * @generated from field: map<string, string> data = 4;
@@ -191,9 +562,9 @@ export class EvmMetadata extends Message<EvmMetadata> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "evm_indexer.v1.EvmMetadata";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "contract_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "event_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "function_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "contract_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: "event_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 3, name: "function_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 4, name: "data", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
   ]);
 
@@ -219,57 +590,77 @@ export class EvmMetadata extends Message<EvmMetadata> {
  */
 export class EvmLog extends Message<EvmLog> {
   /**
-   * @generated from field: string address = 1;
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: uint32 store_id = 2;
+   */
+  storeId = 0;
+
+  /**
+   * @generated from field: uint32 source_id = 3;
+   */
+  sourceId = 0;
+
+  /**
+   * @generated from field: string address = 4;
    */
   address = "";
 
   /**
-   * @generated from field: repeated string topics = 2;
+   * @generated from field: repeated string topics = 5;
    */
   topics: string[] = [];
 
   /**
-   * @generated from field: string data = 3;
+   * @generated from field: string data = 6;
    */
   data = "";
 
   /**
-   * @generated from field: uint64 block_number = 4;
+   * @generated from field: uint64 block_number = 7;
    */
   blockNumber = protoInt64.zero;
 
   /**
-   * @generated from field: string transaction_hash = 5;
+   * @generated from field: string transaction_from = 8;
+   */
+  transactionFrom = "";
+
+  /**
+   * @generated from field: string transaction_hash = 9;
    */
   transactionHash = "";
 
   /**
-   * @generated from field: uint64 transaction_index = 6;
+   * @generated from field: uint64 transaction_index = 10;
    */
   transactionIndex = protoInt64.zero;
 
   /**
-   * @generated from field: string block_hash = 7;
+   * @generated from field: string block_hash = 11;
    */
   blockHash = "";
 
   /**
-   * @generated from field: uint64 log_index = 8;
+   * @generated from field: uint64 log_index = 12;
    */
   logIndex = protoInt64.zero;
 
   /**
-   * @generated from field: bool removed = 9;
+   * @generated from field: bool removed = 13;
    */
   removed = false;
 
   /**
-   * @generated from field: uint64 minted_at = 10;
+   * @generated from field: uint32 minted_at = 14;
    */
-  mintedAt = protoInt64.zero;
+  mintedAt = 0;
 
   /**
-   * @generated from field: optional evm_indexer.v1.EvmMetadata metadata = 11;
+   * @generated from field: evm_indexer.v1.EvmMetadata metadata = 15;
    */
   metadata?: EvmMetadata;
 
@@ -281,17 +672,21 @@ export class EvmLog extends Message<EvmLog> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "evm_indexer.v1.EvmLog";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "topics", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 3, name: "data", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "block_number", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 5, name: "transaction_hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "transaction_index", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 7, name: "block_hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 8, name: "log_index", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 9, name: "removed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 10, name: "minted_at", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 11, name: "metadata", kind: "message", T: EvmMetadata, opt: true },
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "store_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 3, name: "source_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 4, name: "address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "topics", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 6, name: "data", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "block_number", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 8, name: "transaction_from", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "transaction_hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "transaction_index", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 11, name: "block_hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "log_index", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 13, name: "removed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "minted_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 15, name: "metadata", kind: "message", T: EvmMetadata },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvmLog {
@@ -312,155 +707,1752 @@ export class EvmLog extends Message<EvmLog> {
 }
 
 /**
- * @generated from message evm_indexer.v1.LogStore
+ * @generated from message evm_indexer.v1.EvmTransaction
  */
-export class LogStore extends Message<LogStore> {
+export class EvmTransaction extends Message<EvmTransaction> {
   /**
    * @generated from field: string id = 1;
    */
   id = "";
 
   /**
-   * @generated from field: string identifier = 2;
+   * @generated from field: uint32 store_id = 2;
    */
-  identifier = "";
+  storeId = 0;
 
   /**
-   * @generated from field: string description = 3;
+   * @generated from field: uint32 source_id = 3;
    */
-  description = "";
+  sourceId = 0;
 
   /**
-   * @generated from field: string rpc_url = 5;
+   * @generated from field: uint64 block_number = 4;
    */
-  rpcUrl = "";
+  blockNumber = protoInt64.zero;
 
   /**
-   * @generated from field: string status = 6;
+   * @generated from field: uint64 transaction_index = 5;
    */
-  status = "";
+  transactionIndex = protoInt64.zero;
 
   /**
-   * @generated from field: uint64 chainId = 7;
+   * @generated from field: uint64 chain_id = 6;
    */
   chainId = protoInt64.zero;
 
   /**
-   * @generated from field: repeated evm_indexer.v1.LogSource sources = 8;
+   * @generated from field: string from = 7;
    */
-  sources: LogSource[] = [];
+  from = "";
 
-  constructor(data?: PartialMessage<LogStore>) {
+  /**
+   * @generated from field: string data = 8;
+   */
+  data = "";
+
+  /**
+   * @generated from field: string value = 9;
+   */
+  value = "";
+
+  /**
+   * @generated from field: uint64 nonce = 10;
+   */
+  nonce = protoInt64.zero;
+
+  /**
+   * @generated from field: string to = 11;
+   */
+  to = "";
+
+  /**
+   * @generated from field: string hash = 12;
+   */
+  hash = "";
+
+  /**
+   * @generated from field: uint32 minted_at = 13;
+   */
+  mintedAt = 0;
+
+  /**
+   * @generated from field: evm_indexer.v1.EvmMetadata metadata = 14;
+   */
+  metadata?: EvmMetadata;
+
+  constructor(data?: PartialMessage<EvmTransaction>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "evm_indexer.v1.LogStore";
+  static readonly typeName = "evm_indexer.v1.EvmTransaction";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "identifier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "rpc_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: "chainId", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 8, name: "sources", kind: "message", T: LogSource, repeated: true },
+    { no: 2, name: "store_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 3, name: "source_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 4, name: "block_number", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 5, name: "transaction_index", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 6, name: "chain_id", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 7, name: "from", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "data", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "nonce", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 11, name: "to", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "minted_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 14, name: "metadata", kind: "message", T: EvmMetadata },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LogStore {
-    return new LogStore().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvmTransaction {
+    return new EvmTransaction().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LogStore {
-    return new LogStore().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvmTransaction {
+    return new EvmTransaction().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LogStore {
-    return new LogStore().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvmTransaction {
+    return new EvmTransaction().fromJsonString(jsonString, options);
   }
 
-  static equals(a: LogStore | PlainMessage<LogStore> | undefined, b: LogStore | PlainMessage<LogStore> | undefined): boolean {
-    return proto3.util.equals(LogStore, a, b);
+  static equals(a: EvmTransaction | PlainMessage<EvmTransaction> | undefined, b: EvmTransaction | PlainMessage<EvmTransaction> | undefined): boolean {
+    return proto3.util.equals(EvmTransaction, a, b);
   }
 }
 
 /**
- * @generated from message evm_indexer.v1.GetStoresRequest
+ * Pagination
+ *
+ * @generated from message evm_indexer.v1.Pagination
  */
-export class GetStoresRequest extends Message<GetStoresRequest> {
-  constructor(data?: PartialMessage<GetStoresRequest>) {
+export class Pagination extends Message<Pagination> {
+  /**
+   * @generated from field: uint32 limit = 1;
+   */
+  limit = 0;
+
+  /**
+   * @generated from field: uint32 offset = 2;
+   */
+  offset = 0;
+
+  constructor(data?: PartialMessage<Pagination>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "evm_indexer.v1.GetStoresRequest";
+  static readonly typeName = "evm_indexer.v1.Pagination";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 2, name: "offset", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetStoresRequest {
-    return new GetStoresRequest().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Pagination {
+    return new Pagination().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetStoresRequest {
-    return new GetStoresRequest().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Pagination {
+    return new Pagination().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetStoresRequest {
-    return new GetStoresRequest().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Pagination {
+    return new Pagination().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetStoresRequest | PlainMessage<GetStoresRequest> | undefined, b: GetStoresRequest | PlainMessage<GetStoresRequest> | undefined): boolean {
-    return proto3.util.equals(GetStoresRequest, a, b);
+  static equals(a: Pagination | PlainMessage<Pagination> | undefined, b: Pagination | PlainMessage<Pagination> | undefined): boolean {
+    return proto3.util.equals(Pagination, a, b);
   }
 }
 
 /**
- * @generated from message evm_indexer.v1.GetStoresResponse
+ * EvmiInstance
+ *
+ * @generated from message evm_indexer.v1.GetEvmiInstanceRequest
  */
-export class GetStoresResponse extends Message<GetStoresResponse> {
+export class GetEvmiInstanceRequest extends Message<GetEvmiInstanceRequest> {
   /**
-   * @generated from field: bool success = 1;
+   * @generated from field: uint32 id = 1;
    */
-  success = false;
+  id = 0;
 
-  /**
-   * @generated from field: string error = 2;
-   */
-  error = "";
-
-  /**
-   * @generated from field: repeated evm_indexer.v1.LogStore stores = 3;
-   */
-  stores: LogStore[] = [];
-
-  constructor(data?: PartialMessage<GetStoresResponse>) {
+  constructor(data?: PartialMessage<GetEvmiInstanceRequest>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "evm_indexer.v1.GetStoresResponse";
+  static readonly typeName = "evm_indexer.v1.GetEvmiInstanceRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "success", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 2, name: "error", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "stores", kind: "message", T: LogStore, repeated: true },
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetStoresResponse {
-    return new GetStoresResponse().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvmiInstanceRequest {
+    return new GetEvmiInstanceRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetStoresResponse {
-    return new GetStoresResponse().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvmiInstanceRequest {
+    return new GetEvmiInstanceRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetStoresResponse {
-    return new GetStoresResponse().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvmiInstanceRequest {
+    return new GetEvmiInstanceRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetStoresResponse | PlainMessage<GetStoresResponse> | undefined, b: GetStoresResponse | PlainMessage<GetStoresResponse> | undefined): boolean {
-    return proto3.util.equals(GetStoresResponse, a, b);
+  static equals(a: GetEvmiInstanceRequest | PlainMessage<GetEvmiInstanceRequest> | undefined, b: GetEvmiInstanceRequest | PlainMessage<GetEvmiInstanceRequest> | undefined): boolean {
+    return proto3.util.equals(GetEvmiInstanceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.GetEvmiInstanceResponse
+ */
+export class GetEvmiInstanceResponse extends Message<GetEvmiInstanceResponse> {
+  /**
+   * @generated from field: evm_indexer.v1.EvmiInstance instance = 1;
+   */
+  instance?: EvmiInstance;
+
+  constructor(data?: PartialMessage<GetEvmiInstanceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.GetEvmiInstanceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "instance", kind: "message", T: EvmiInstance },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvmiInstanceResponse {
+    return new GetEvmiInstanceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvmiInstanceResponse {
+    return new GetEvmiInstanceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvmiInstanceResponse {
+    return new GetEvmiInstanceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvmiInstanceResponse | PlainMessage<GetEvmiInstanceResponse> | undefined, b: GetEvmiInstanceResponse | PlainMessage<GetEvmiInstanceResponse> | undefined): boolean {
+    return proto3.util.equals(GetEvmiInstanceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.ListEvmiInstancesRequest
+ */
+export class ListEvmiInstancesRequest extends Message<ListEvmiInstancesRequest> {
+  /**
+   * @generated from field: evm_indexer.v1.Pagination pagination = 1;
+   */
+  pagination?: Pagination;
+
+  constructor(data?: PartialMessage<ListEvmiInstancesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.ListEvmiInstancesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pagination", kind: "message", T: Pagination },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEvmiInstancesRequest {
+    return new ListEvmiInstancesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEvmiInstancesRequest {
+    return new ListEvmiInstancesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEvmiInstancesRequest {
+    return new ListEvmiInstancesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListEvmiInstancesRequest | PlainMessage<ListEvmiInstancesRequest> | undefined, b: ListEvmiInstancesRequest | PlainMessage<ListEvmiInstancesRequest> | undefined): boolean {
+    return proto3.util.equals(ListEvmiInstancesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.ListEvmiInstancesResponse
+ */
+export class ListEvmiInstancesResponse extends Message<ListEvmiInstancesResponse> {
+  /**
+   * @generated from field: repeated evm_indexer.v1.EvmiInstance instances = 1;
+   */
+  instances: EvmiInstance[] = [];
+
+  constructor(data?: PartialMessage<ListEvmiInstancesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.ListEvmiInstancesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "instances", kind: "message", T: EvmiInstance, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEvmiInstancesResponse {
+    return new ListEvmiInstancesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEvmiInstancesResponse {
+    return new ListEvmiInstancesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEvmiInstancesResponse {
+    return new ListEvmiInstancesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListEvmiInstancesResponse | PlainMessage<ListEvmiInstancesResponse> | undefined, b: ListEvmiInstancesResponse | PlainMessage<ListEvmiInstancesResponse> | undefined): boolean {
+    return proto3.util.equals(ListEvmiInstancesResponse, a, b);
+  }
+}
+
+/**
+ * EvmBlockchain
+ *
+ * @generated from message evm_indexer.v1.CreateEvmBlockchainRequest
+ */
+export class CreateEvmBlockchainRequest extends Message<CreateEvmBlockchainRequest> {
+  /**
+   * @generated from field: evm_indexer.v1.EvmBlockchain blockchain = 1;
+   */
+  blockchain?: EvmBlockchain;
+
+  constructor(data?: PartialMessage<CreateEvmBlockchainRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.CreateEvmBlockchainRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "blockchain", kind: "message", T: EvmBlockchain },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEvmBlockchainRequest {
+    return new CreateEvmBlockchainRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateEvmBlockchainRequest {
+    return new CreateEvmBlockchainRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEvmBlockchainRequest {
+    return new CreateEvmBlockchainRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateEvmBlockchainRequest | PlainMessage<CreateEvmBlockchainRequest> | undefined, b: CreateEvmBlockchainRequest | PlainMessage<CreateEvmBlockchainRequest> | undefined): boolean {
+    return proto3.util.equals(CreateEvmBlockchainRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.CreateEvmBlockchainResponse
+ */
+export class CreateEvmBlockchainResponse extends Message<CreateEvmBlockchainResponse> {
+  /**
+   * @generated from field: uint32 id = 1;
+   */
+  id = 0;
+
+  constructor(data?: PartialMessage<CreateEvmBlockchainResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.CreateEvmBlockchainResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEvmBlockchainResponse {
+    return new CreateEvmBlockchainResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateEvmBlockchainResponse {
+    return new CreateEvmBlockchainResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEvmBlockchainResponse {
+    return new CreateEvmBlockchainResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateEvmBlockchainResponse | PlainMessage<CreateEvmBlockchainResponse> | undefined, b: CreateEvmBlockchainResponse | PlainMessage<CreateEvmBlockchainResponse> | undefined): boolean {
+    return proto3.util.equals(CreateEvmBlockchainResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.GetEvmBlockchainRequest
+ */
+export class GetEvmBlockchainRequest extends Message<GetEvmBlockchainRequest> {
+  /**
+   * @generated from field: uint32 id = 1;
+   */
+  id = 0;
+
+  constructor(data?: PartialMessage<GetEvmBlockchainRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.GetEvmBlockchainRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvmBlockchainRequest {
+    return new GetEvmBlockchainRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvmBlockchainRequest {
+    return new GetEvmBlockchainRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvmBlockchainRequest {
+    return new GetEvmBlockchainRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvmBlockchainRequest | PlainMessage<GetEvmBlockchainRequest> | undefined, b: GetEvmBlockchainRequest | PlainMessage<GetEvmBlockchainRequest> | undefined): boolean {
+    return proto3.util.equals(GetEvmBlockchainRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.GetEvmBlockchainResponse
+ */
+export class GetEvmBlockchainResponse extends Message<GetEvmBlockchainResponse> {
+  /**
+   * @generated from field: evm_indexer.v1.EvmBlockchain blockchain = 1;
+   */
+  blockchain?: EvmBlockchain;
+
+  constructor(data?: PartialMessage<GetEvmBlockchainResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.GetEvmBlockchainResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "blockchain", kind: "message", T: EvmBlockchain },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvmBlockchainResponse {
+    return new GetEvmBlockchainResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvmBlockchainResponse {
+    return new GetEvmBlockchainResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvmBlockchainResponse {
+    return new GetEvmBlockchainResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvmBlockchainResponse | PlainMessage<GetEvmBlockchainResponse> | undefined, b: GetEvmBlockchainResponse | PlainMessage<GetEvmBlockchainResponse> | undefined): boolean {
+    return proto3.util.equals(GetEvmBlockchainResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.UpdateEvmBlockchainRequest
+ */
+export class UpdateEvmBlockchainRequest extends Message<UpdateEvmBlockchainRequest> {
+  /**
+   * @generated from field: evm_indexer.v1.EvmBlockchain blockchain = 1;
+   */
+  blockchain?: EvmBlockchain;
+
+  constructor(data?: PartialMessage<UpdateEvmBlockchainRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.UpdateEvmBlockchainRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "blockchain", kind: "message", T: EvmBlockchain },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateEvmBlockchainRequest {
+    return new UpdateEvmBlockchainRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateEvmBlockchainRequest {
+    return new UpdateEvmBlockchainRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateEvmBlockchainRequest {
+    return new UpdateEvmBlockchainRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateEvmBlockchainRequest | PlainMessage<UpdateEvmBlockchainRequest> | undefined, b: UpdateEvmBlockchainRequest | PlainMessage<UpdateEvmBlockchainRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateEvmBlockchainRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.UpdateEvmBlockchainResponse
+ */
+export class UpdateEvmBlockchainResponse extends Message<UpdateEvmBlockchainResponse> {
+  constructor(data?: PartialMessage<UpdateEvmBlockchainResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.UpdateEvmBlockchainResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateEvmBlockchainResponse {
+    return new UpdateEvmBlockchainResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateEvmBlockchainResponse {
+    return new UpdateEvmBlockchainResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateEvmBlockchainResponse {
+    return new UpdateEvmBlockchainResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateEvmBlockchainResponse | PlainMessage<UpdateEvmBlockchainResponse> | undefined, b: UpdateEvmBlockchainResponse | PlainMessage<UpdateEvmBlockchainResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateEvmBlockchainResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.ListEvmBlockchainsRequest
+ */
+export class ListEvmBlockchainsRequest extends Message<ListEvmBlockchainsRequest> {
+  /**
+   * @generated from field: evm_indexer.v1.Pagination pagination = 1;
+   */
+  pagination?: Pagination;
+
+  constructor(data?: PartialMessage<ListEvmBlockchainsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.ListEvmBlockchainsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pagination", kind: "message", T: Pagination },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEvmBlockchainsRequest {
+    return new ListEvmBlockchainsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEvmBlockchainsRequest {
+    return new ListEvmBlockchainsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEvmBlockchainsRequest {
+    return new ListEvmBlockchainsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListEvmBlockchainsRequest | PlainMessage<ListEvmBlockchainsRequest> | undefined, b: ListEvmBlockchainsRequest | PlainMessage<ListEvmBlockchainsRequest> | undefined): boolean {
+    return proto3.util.equals(ListEvmBlockchainsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.ListEvmBlockchainsResponse
+ */
+export class ListEvmBlockchainsResponse extends Message<ListEvmBlockchainsResponse> {
+  /**
+   * @generated from field: repeated evm_indexer.v1.EvmBlockchain blockchains = 1;
+   */
+  blockchains: EvmBlockchain[] = [];
+
+  constructor(data?: PartialMessage<ListEvmBlockchainsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.ListEvmBlockchainsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "blockchains", kind: "message", T: EvmBlockchain, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEvmBlockchainsResponse {
+    return new ListEvmBlockchainsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEvmBlockchainsResponse {
+    return new ListEvmBlockchainsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEvmBlockchainsResponse {
+    return new ListEvmBlockchainsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListEvmBlockchainsResponse | PlainMessage<ListEvmBlockchainsResponse> | undefined, b: ListEvmBlockchainsResponse | PlainMessage<ListEvmBlockchainsResponse> | undefined): boolean {
+    return proto3.util.equals(ListEvmBlockchainsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.DeleteEvmBlockchainRequest
+ */
+export class DeleteEvmBlockchainRequest extends Message<DeleteEvmBlockchainRequest> {
+  /**
+   * @generated from field: uint32 id = 1;
+   */
+  id = 0;
+
+  constructor(data?: PartialMessage<DeleteEvmBlockchainRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.DeleteEvmBlockchainRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteEvmBlockchainRequest {
+    return new DeleteEvmBlockchainRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteEvmBlockchainRequest {
+    return new DeleteEvmBlockchainRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteEvmBlockchainRequest {
+    return new DeleteEvmBlockchainRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteEvmBlockchainRequest | PlainMessage<DeleteEvmBlockchainRequest> | undefined, b: DeleteEvmBlockchainRequest | PlainMessage<DeleteEvmBlockchainRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteEvmBlockchainRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.DeleteEvmBlockchainResponse
+ */
+export class DeleteEvmBlockchainResponse extends Message<DeleteEvmBlockchainResponse> {
+  constructor(data?: PartialMessage<DeleteEvmBlockchainResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.DeleteEvmBlockchainResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteEvmBlockchainResponse {
+    return new DeleteEvmBlockchainResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteEvmBlockchainResponse {
+    return new DeleteEvmBlockchainResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteEvmBlockchainResponse {
+    return new DeleteEvmBlockchainResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteEvmBlockchainResponse | PlainMessage<DeleteEvmBlockchainResponse> | undefined, b: DeleteEvmBlockchainResponse | PlainMessage<DeleteEvmBlockchainResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteEvmBlockchainResponse, a, b);
+  }
+}
+
+/**
+ * EvmJsonAbi
+ *
+ * @generated from message evm_indexer.v1.CreateEvmJsonAbiRequest
+ */
+export class CreateEvmJsonAbiRequest extends Message<CreateEvmJsonAbiRequest> {
+  /**
+   * @generated from field: evm_indexer.v1.EvmJsonAbi abi = 1;
+   */
+  abi?: EvmJsonAbi;
+
+  constructor(data?: PartialMessage<CreateEvmJsonAbiRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.CreateEvmJsonAbiRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "abi", kind: "message", T: EvmJsonAbi },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEvmJsonAbiRequest {
+    return new CreateEvmJsonAbiRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateEvmJsonAbiRequest {
+    return new CreateEvmJsonAbiRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEvmJsonAbiRequest {
+    return new CreateEvmJsonAbiRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateEvmJsonAbiRequest | PlainMessage<CreateEvmJsonAbiRequest> | undefined, b: CreateEvmJsonAbiRequest | PlainMessage<CreateEvmJsonAbiRequest> | undefined): boolean {
+    return proto3.util.equals(CreateEvmJsonAbiRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.CreateEvmJsonAbiResponse
+ */
+export class CreateEvmJsonAbiResponse extends Message<CreateEvmJsonAbiResponse> {
+  /**
+   * @generated from field: uint32 id = 1;
+   */
+  id = 0;
+
+  constructor(data?: PartialMessage<CreateEvmJsonAbiResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.CreateEvmJsonAbiResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEvmJsonAbiResponse {
+    return new CreateEvmJsonAbiResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateEvmJsonAbiResponse {
+    return new CreateEvmJsonAbiResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEvmJsonAbiResponse {
+    return new CreateEvmJsonAbiResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateEvmJsonAbiResponse | PlainMessage<CreateEvmJsonAbiResponse> | undefined, b: CreateEvmJsonAbiResponse | PlainMessage<CreateEvmJsonAbiResponse> | undefined): boolean {
+    return proto3.util.equals(CreateEvmJsonAbiResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.GetEvmJsonAbiRequest
+ */
+export class GetEvmJsonAbiRequest extends Message<GetEvmJsonAbiRequest> {
+  /**
+   * @generated from field: uint32 id = 1;
+   */
+  id = 0;
+
+  constructor(data?: PartialMessage<GetEvmJsonAbiRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.GetEvmJsonAbiRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvmJsonAbiRequest {
+    return new GetEvmJsonAbiRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvmJsonAbiRequest {
+    return new GetEvmJsonAbiRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvmJsonAbiRequest {
+    return new GetEvmJsonAbiRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvmJsonAbiRequest | PlainMessage<GetEvmJsonAbiRequest> | undefined, b: GetEvmJsonAbiRequest | PlainMessage<GetEvmJsonAbiRequest> | undefined): boolean {
+    return proto3.util.equals(GetEvmJsonAbiRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.GetEvmJsonAbiResponse
+ */
+export class GetEvmJsonAbiResponse extends Message<GetEvmJsonAbiResponse> {
+  /**
+   * @generated from field: evm_indexer.v1.EvmJsonAbi abi = 1;
+   */
+  abi?: EvmJsonAbi;
+
+  constructor(data?: PartialMessage<GetEvmJsonAbiResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.GetEvmJsonAbiResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "abi", kind: "message", T: EvmJsonAbi },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvmJsonAbiResponse {
+    return new GetEvmJsonAbiResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvmJsonAbiResponse {
+    return new GetEvmJsonAbiResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvmJsonAbiResponse {
+    return new GetEvmJsonAbiResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvmJsonAbiResponse | PlainMessage<GetEvmJsonAbiResponse> | undefined, b: GetEvmJsonAbiResponse | PlainMessage<GetEvmJsonAbiResponse> | undefined): boolean {
+    return proto3.util.equals(GetEvmJsonAbiResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.UpdateEvmJsonAbiRequest
+ */
+export class UpdateEvmJsonAbiRequest extends Message<UpdateEvmJsonAbiRequest> {
+  /**
+   * @generated from field: evm_indexer.v1.EvmJsonAbi abi = 1;
+   */
+  abi?: EvmJsonAbi;
+
+  constructor(data?: PartialMessage<UpdateEvmJsonAbiRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.UpdateEvmJsonAbiRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "abi", kind: "message", T: EvmJsonAbi },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateEvmJsonAbiRequest {
+    return new UpdateEvmJsonAbiRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateEvmJsonAbiRequest {
+    return new UpdateEvmJsonAbiRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateEvmJsonAbiRequest {
+    return new UpdateEvmJsonAbiRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateEvmJsonAbiRequest | PlainMessage<UpdateEvmJsonAbiRequest> | undefined, b: UpdateEvmJsonAbiRequest | PlainMessage<UpdateEvmJsonAbiRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateEvmJsonAbiRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.UpdateEvmJsonAbiResponse
+ */
+export class UpdateEvmJsonAbiResponse extends Message<UpdateEvmJsonAbiResponse> {
+  constructor(data?: PartialMessage<UpdateEvmJsonAbiResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.UpdateEvmJsonAbiResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateEvmJsonAbiResponse {
+    return new UpdateEvmJsonAbiResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateEvmJsonAbiResponse {
+    return new UpdateEvmJsonAbiResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateEvmJsonAbiResponse {
+    return new UpdateEvmJsonAbiResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateEvmJsonAbiResponse | PlainMessage<UpdateEvmJsonAbiResponse> | undefined, b: UpdateEvmJsonAbiResponse | PlainMessage<UpdateEvmJsonAbiResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateEvmJsonAbiResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.ListEvmJsonAbisRequest
+ */
+export class ListEvmJsonAbisRequest extends Message<ListEvmJsonAbisRequest> {
+  /**
+   * @generated from field: evm_indexer.v1.Pagination pagination = 1;
+   */
+  pagination?: Pagination;
+
+  constructor(data?: PartialMessage<ListEvmJsonAbisRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.ListEvmJsonAbisRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pagination", kind: "message", T: Pagination },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEvmJsonAbisRequest {
+    return new ListEvmJsonAbisRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEvmJsonAbisRequest {
+    return new ListEvmJsonAbisRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEvmJsonAbisRequest {
+    return new ListEvmJsonAbisRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListEvmJsonAbisRequest | PlainMessage<ListEvmJsonAbisRequest> | undefined, b: ListEvmJsonAbisRequest | PlainMessage<ListEvmJsonAbisRequest> | undefined): boolean {
+    return proto3.util.equals(ListEvmJsonAbisRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.ListEvmJsonAbisResponse
+ */
+export class ListEvmJsonAbisResponse extends Message<ListEvmJsonAbisResponse> {
+  /**
+   * @generated from field: repeated evm_indexer.v1.EvmJsonAbi abis = 1;
+   */
+  abis: EvmJsonAbi[] = [];
+
+  constructor(data?: PartialMessage<ListEvmJsonAbisResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.ListEvmJsonAbisResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "abis", kind: "message", T: EvmJsonAbi, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEvmJsonAbisResponse {
+    return new ListEvmJsonAbisResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEvmJsonAbisResponse {
+    return new ListEvmJsonAbisResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEvmJsonAbisResponse {
+    return new ListEvmJsonAbisResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListEvmJsonAbisResponse | PlainMessage<ListEvmJsonAbisResponse> | undefined, b: ListEvmJsonAbisResponse | PlainMessage<ListEvmJsonAbisResponse> | undefined): boolean {
+    return proto3.util.equals(ListEvmJsonAbisResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.DeleteEvmJsonAbiRequest
+ */
+export class DeleteEvmJsonAbiRequest extends Message<DeleteEvmJsonAbiRequest> {
+  /**
+   * @generated from field: uint32 id = 1;
+   */
+  id = 0;
+
+  constructor(data?: PartialMessage<DeleteEvmJsonAbiRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.DeleteEvmJsonAbiRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteEvmJsonAbiRequest {
+    return new DeleteEvmJsonAbiRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteEvmJsonAbiRequest {
+    return new DeleteEvmJsonAbiRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteEvmJsonAbiRequest {
+    return new DeleteEvmJsonAbiRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteEvmJsonAbiRequest | PlainMessage<DeleteEvmJsonAbiRequest> | undefined, b: DeleteEvmJsonAbiRequest | PlainMessage<DeleteEvmJsonAbiRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteEvmJsonAbiRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.DeleteEvmJsonAbiResponse
+ */
+export class DeleteEvmJsonAbiResponse extends Message<DeleteEvmJsonAbiResponse> {
+  constructor(data?: PartialMessage<DeleteEvmJsonAbiResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.DeleteEvmJsonAbiResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteEvmJsonAbiResponse {
+    return new DeleteEvmJsonAbiResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteEvmJsonAbiResponse {
+    return new DeleteEvmJsonAbiResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteEvmJsonAbiResponse {
+    return new DeleteEvmJsonAbiResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteEvmJsonAbiResponse | PlainMessage<DeleteEvmJsonAbiResponse> | undefined, b: DeleteEvmJsonAbiResponse | PlainMessage<DeleteEvmJsonAbiResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteEvmJsonAbiResponse, a, b);
+  }
+}
+
+/**
+ * EvmLogStore
+ *
+ * @generated from message evm_indexer.v1.CreateEvmLogStoreRequest
+ */
+export class CreateEvmLogStoreRequest extends Message<CreateEvmLogStoreRequest> {
+  /**
+   * @generated from field: evm_indexer.v1.EvmLogStore store = 1;
+   */
+  store?: EvmLogStore;
+
+  constructor(data?: PartialMessage<CreateEvmLogStoreRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.CreateEvmLogStoreRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "store", kind: "message", T: EvmLogStore },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEvmLogStoreRequest {
+    return new CreateEvmLogStoreRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateEvmLogStoreRequest {
+    return new CreateEvmLogStoreRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEvmLogStoreRequest {
+    return new CreateEvmLogStoreRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateEvmLogStoreRequest | PlainMessage<CreateEvmLogStoreRequest> | undefined, b: CreateEvmLogStoreRequest | PlainMessage<CreateEvmLogStoreRequest> | undefined): boolean {
+    return proto3.util.equals(CreateEvmLogStoreRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.CreateEvmLogStoreResponse
+ */
+export class CreateEvmLogStoreResponse extends Message<CreateEvmLogStoreResponse> {
+  /**
+   * @generated from field: uint32 id = 1;
+   */
+  id = 0;
+
+  constructor(data?: PartialMessage<CreateEvmLogStoreResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.CreateEvmLogStoreResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEvmLogStoreResponse {
+    return new CreateEvmLogStoreResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateEvmLogStoreResponse {
+    return new CreateEvmLogStoreResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEvmLogStoreResponse {
+    return new CreateEvmLogStoreResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateEvmLogStoreResponse | PlainMessage<CreateEvmLogStoreResponse> | undefined, b: CreateEvmLogStoreResponse | PlainMessage<CreateEvmLogStoreResponse> | undefined): boolean {
+    return proto3.util.equals(CreateEvmLogStoreResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.GetEvmLogStoreRequest
+ */
+export class GetEvmLogStoreRequest extends Message<GetEvmLogStoreRequest> {
+  /**
+   * @generated from field: uint32 id = 1;
+   */
+  id = 0;
+
+  constructor(data?: PartialMessage<GetEvmLogStoreRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.GetEvmLogStoreRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvmLogStoreRequest {
+    return new GetEvmLogStoreRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvmLogStoreRequest {
+    return new GetEvmLogStoreRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvmLogStoreRequest {
+    return new GetEvmLogStoreRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvmLogStoreRequest | PlainMessage<GetEvmLogStoreRequest> | undefined, b: GetEvmLogStoreRequest | PlainMessage<GetEvmLogStoreRequest> | undefined): boolean {
+    return proto3.util.equals(GetEvmLogStoreRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.GetEvmLogStoreResponse
+ */
+export class GetEvmLogStoreResponse extends Message<GetEvmLogStoreResponse> {
+  /**
+   * @generated from field: evm_indexer.v1.EvmLogStore store = 1;
+   */
+  store?: EvmLogStore;
+
+  constructor(data?: PartialMessage<GetEvmLogStoreResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.GetEvmLogStoreResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "store", kind: "message", T: EvmLogStore },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvmLogStoreResponse {
+    return new GetEvmLogStoreResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvmLogStoreResponse {
+    return new GetEvmLogStoreResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvmLogStoreResponse {
+    return new GetEvmLogStoreResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvmLogStoreResponse | PlainMessage<GetEvmLogStoreResponse> | undefined, b: GetEvmLogStoreResponse | PlainMessage<GetEvmLogStoreResponse> | undefined): boolean {
+    return proto3.util.equals(GetEvmLogStoreResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.UpdateEvmLogStoreRequest
+ */
+export class UpdateEvmLogStoreRequest extends Message<UpdateEvmLogStoreRequest> {
+  /**
+   * @generated from field: evm_indexer.v1.EvmLogStore store = 1;
+   */
+  store?: EvmLogStore;
+
+  constructor(data?: PartialMessage<UpdateEvmLogStoreRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.UpdateEvmLogStoreRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "store", kind: "message", T: EvmLogStore },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateEvmLogStoreRequest {
+    return new UpdateEvmLogStoreRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateEvmLogStoreRequest {
+    return new UpdateEvmLogStoreRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateEvmLogStoreRequest {
+    return new UpdateEvmLogStoreRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateEvmLogStoreRequest | PlainMessage<UpdateEvmLogStoreRequest> | undefined, b: UpdateEvmLogStoreRequest | PlainMessage<UpdateEvmLogStoreRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateEvmLogStoreRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.UpdateEvmLogStoreResponse
+ */
+export class UpdateEvmLogStoreResponse extends Message<UpdateEvmLogStoreResponse> {
+  constructor(data?: PartialMessage<UpdateEvmLogStoreResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.UpdateEvmLogStoreResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateEvmLogStoreResponse {
+    return new UpdateEvmLogStoreResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateEvmLogStoreResponse {
+    return new UpdateEvmLogStoreResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateEvmLogStoreResponse {
+    return new UpdateEvmLogStoreResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateEvmLogStoreResponse | PlainMessage<UpdateEvmLogStoreResponse> | undefined, b: UpdateEvmLogStoreResponse | PlainMessage<UpdateEvmLogStoreResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateEvmLogStoreResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.ListEvmLogStoresRequest
+ */
+export class ListEvmLogStoresRequest extends Message<ListEvmLogStoresRequest> {
+  /**
+   * @generated from field: evm_indexer.v1.Pagination pagination = 1;
+   */
+  pagination?: Pagination;
+
+  constructor(data?: PartialMessage<ListEvmLogStoresRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.ListEvmLogStoresRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pagination", kind: "message", T: Pagination },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEvmLogStoresRequest {
+    return new ListEvmLogStoresRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEvmLogStoresRequest {
+    return new ListEvmLogStoresRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEvmLogStoresRequest {
+    return new ListEvmLogStoresRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListEvmLogStoresRequest | PlainMessage<ListEvmLogStoresRequest> | undefined, b: ListEvmLogStoresRequest | PlainMessage<ListEvmLogStoresRequest> | undefined): boolean {
+    return proto3.util.equals(ListEvmLogStoresRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.ListEvmLogStoresResponse
+ */
+export class ListEvmLogStoresResponse extends Message<ListEvmLogStoresResponse> {
+  /**
+   * @generated from field: repeated evm_indexer.v1.EvmLogStore stores = 1;
+   */
+  stores: EvmLogStore[] = [];
+
+  constructor(data?: PartialMessage<ListEvmLogStoresResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.ListEvmLogStoresResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "stores", kind: "message", T: EvmLogStore, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEvmLogStoresResponse {
+    return new ListEvmLogStoresResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEvmLogStoresResponse {
+    return new ListEvmLogStoresResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEvmLogStoresResponse {
+    return new ListEvmLogStoresResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListEvmLogStoresResponse | PlainMessage<ListEvmLogStoresResponse> | undefined, b: ListEvmLogStoresResponse | PlainMessage<ListEvmLogStoresResponse> | undefined): boolean {
+    return proto3.util.equals(ListEvmLogStoresResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.DeleteEvmLogStoreRequest
+ */
+export class DeleteEvmLogStoreRequest extends Message<DeleteEvmLogStoreRequest> {
+  /**
+   * @generated from field: uint32 id = 1;
+   */
+  id = 0;
+
+  constructor(data?: PartialMessage<DeleteEvmLogStoreRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.DeleteEvmLogStoreRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteEvmLogStoreRequest {
+    return new DeleteEvmLogStoreRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteEvmLogStoreRequest {
+    return new DeleteEvmLogStoreRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteEvmLogStoreRequest {
+    return new DeleteEvmLogStoreRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteEvmLogStoreRequest | PlainMessage<DeleteEvmLogStoreRequest> | undefined, b: DeleteEvmLogStoreRequest | PlainMessage<DeleteEvmLogStoreRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteEvmLogStoreRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.DeleteEvmLogStoreResponse
+ */
+export class DeleteEvmLogStoreResponse extends Message<DeleteEvmLogStoreResponse> {
+  constructor(data?: PartialMessage<DeleteEvmLogStoreResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.DeleteEvmLogStoreResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteEvmLogStoreResponse {
+    return new DeleteEvmLogStoreResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteEvmLogStoreResponse {
+    return new DeleteEvmLogStoreResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteEvmLogStoreResponse {
+    return new DeleteEvmLogStoreResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteEvmLogStoreResponse | PlainMessage<DeleteEvmLogStoreResponse> | undefined, b: DeleteEvmLogStoreResponse | PlainMessage<DeleteEvmLogStoreResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteEvmLogStoreResponse, a, b);
+  }
+}
+
+/**
+ * EvmLogPipeline
+ *
+ * @generated from message evm_indexer.v1.CreateEvmLogPipelineRequest
+ */
+export class CreateEvmLogPipelineRequest extends Message<CreateEvmLogPipelineRequest> {
+  /**
+   * @generated from field: evm_indexer.v1.EvmLogPipeline pipeline = 1;
+   */
+  pipeline?: EvmLogPipeline;
+
+  constructor(data?: PartialMessage<CreateEvmLogPipelineRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.CreateEvmLogPipelineRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pipeline", kind: "message", T: EvmLogPipeline },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEvmLogPipelineRequest {
+    return new CreateEvmLogPipelineRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateEvmLogPipelineRequest {
+    return new CreateEvmLogPipelineRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEvmLogPipelineRequest {
+    return new CreateEvmLogPipelineRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateEvmLogPipelineRequest | PlainMessage<CreateEvmLogPipelineRequest> | undefined, b: CreateEvmLogPipelineRequest | PlainMessage<CreateEvmLogPipelineRequest> | undefined): boolean {
+    return proto3.util.equals(CreateEvmLogPipelineRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.CreateEvmLogPipelineResponse
+ */
+export class CreateEvmLogPipelineResponse extends Message<CreateEvmLogPipelineResponse> {
+  /**
+   * @generated from field: uint32 id = 1;
+   */
+  id = 0;
+
+  constructor(data?: PartialMessage<CreateEvmLogPipelineResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.CreateEvmLogPipelineResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEvmLogPipelineResponse {
+    return new CreateEvmLogPipelineResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateEvmLogPipelineResponse {
+    return new CreateEvmLogPipelineResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEvmLogPipelineResponse {
+    return new CreateEvmLogPipelineResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateEvmLogPipelineResponse | PlainMessage<CreateEvmLogPipelineResponse> | undefined, b: CreateEvmLogPipelineResponse | PlainMessage<CreateEvmLogPipelineResponse> | undefined): boolean {
+    return proto3.util.equals(CreateEvmLogPipelineResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.GetEvmLogPipelineRequest
+ */
+export class GetEvmLogPipelineRequest extends Message<GetEvmLogPipelineRequest> {
+  /**
+   * @generated from field: uint32 id = 1;
+   */
+  id = 0;
+
+  constructor(data?: PartialMessage<GetEvmLogPipelineRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.GetEvmLogPipelineRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvmLogPipelineRequest {
+    return new GetEvmLogPipelineRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvmLogPipelineRequest {
+    return new GetEvmLogPipelineRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvmLogPipelineRequest {
+    return new GetEvmLogPipelineRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvmLogPipelineRequest | PlainMessage<GetEvmLogPipelineRequest> | undefined, b: GetEvmLogPipelineRequest | PlainMessage<GetEvmLogPipelineRequest> | undefined): boolean {
+    return proto3.util.equals(GetEvmLogPipelineRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.GetEvmLogPipelineResponse
+ */
+export class GetEvmLogPipelineResponse extends Message<GetEvmLogPipelineResponse> {
+  /**
+   * @generated from field: evm_indexer.v1.EvmLogPipeline pipeline = 1;
+   */
+  pipeline?: EvmLogPipeline;
+
+  constructor(data?: PartialMessage<GetEvmLogPipelineResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.GetEvmLogPipelineResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pipeline", kind: "message", T: EvmLogPipeline },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvmLogPipelineResponse {
+    return new GetEvmLogPipelineResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvmLogPipelineResponse {
+    return new GetEvmLogPipelineResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvmLogPipelineResponse {
+    return new GetEvmLogPipelineResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvmLogPipelineResponse | PlainMessage<GetEvmLogPipelineResponse> | undefined, b: GetEvmLogPipelineResponse | PlainMessage<GetEvmLogPipelineResponse> | undefined): boolean {
+    return proto3.util.equals(GetEvmLogPipelineResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.UpdateEvmLogPipelineRequest
+ */
+export class UpdateEvmLogPipelineRequest extends Message<UpdateEvmLogPipelineRequest> {
+  /**
+   * @generated from field: evm_indexer.v1.EvmLogPipeline pipeline = 1;
+   */
+  pipeline?: EvmLogPipeline;
+
+  constructor(data?: PartialMessage<UpdateEvmLogPipelineRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.UpdateEvmLogPipelineRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pipeline", kind: "message", T: EvmLogPipeline },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateEvmLogPipelineRequest {
+    return new UpdateEvmLogPipelineRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateEvmLogPipelineRequest {
+    return new UpdateEvmLogPipelineRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateEvmLogPipelineRequest {
+    return new UpdateEvmLogPipelineRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateEvmLogPipelineRequest | PlainMessage<UpdateEvmLogPipelineRequest> | undefined, b: UpdateEvmLogPipelineRequest | PlainMessage<UpdateEvmLogPipelineRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateEvmLogPipelineRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.UpdateEvmLogPipelineResponse
+ */
+export class UpdateEvmLogPipelineResponse extends Message<UpdateEvmLogPipelineResponse> {
+  constructor(data?: PartialMessage<UpdateEvmLogPipelineResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.UpdateEvmLogPipelineResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateEvmLogPipelineResponse {
+    return new UpdateEvmLogPipelineResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateEvmLogPipelineResponse {
+    return new UpdateEvmLogPipelineResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateEvmLogPipelineResponse {
+    return new UpdateEvmLogPipelineResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateEvmLogPipelineResponse | PlainMessage<UpdateEvmLogPipelineResponse> | undefined, b: UpdateEvmLogPipelineResponse | PlainMessage<UpdateEvmLogPipelineResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateEvmLogPipelineResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.ListEvmLogPipelinesRequest
+ */
+export class ListEvmLogPipelinesRequest extends Message<ListEvmLogPipelinesRequest> {
+  /**
+   * @generated from field: evm_indexer.v1.Pagination pagination = 1;
+   */
+  pagination?: Pagination;
+
+  constructor(data?: PartialMessage<ListEvmLogPipelinesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.ListEvmLogPipelinesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pagination", kind: "message", T: Pagination },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEvmLogPipelinesRequest {
+    return new ListEvmLogPipelinesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEvmLogPipelinesRequest {
+    return new ListEvmLogPipelinesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEvmLogPipelinesRequest {
+    return new ListEvmLogPipelinesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListEvmLogPipelinesRequest | PlainMessage<ListEvmLogPipelinesRequest> | undefined, b: ListEvmLogPipelinesRequest | PlainMessage<ListEvmLogPipelinesRequest> | undefined): boolean {
+    return proto3.util.equals(ListEvmLogPipelinesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.ListEvmLogPipelinesResponse
+ */
+export class ListEvmLogPipelinesResponse extends Message<ListEvmLogPipelinesResponse> {
+  /**
+   * @generated from field: repeated evm_indexer.v1.EvmLogPipeline pipelines = 1;
+   */
+  pipelines: EvmLogPipeline[] = [];
+
+  constructor(data?: PartialMessage<ListEvmLogPipelinesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.ListEvmLogPipelinesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pipelines", kind: "message", T: EvmLogPipeline, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEvmLogPipelinesResponse {
+    return new ListEvmLogPipelinesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEvmLogPipelinesResponse {
+    return new ListEvmLogPipelinesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEvmLogPipelinesResponse {
+    return new ListEvmLogPipelinesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListEvmLogPipelinesResponse | PlainMessage<ListEvmLogPipelinesResponse> | undefined, b: ListEvmLogPipelinesResponse | PlainMessage<ListEvmLogPipelinesResponse> | undefined): boolean {
+    return proto3.util.equals(ListEvmLogPipelinesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.DeleteEvmLogPipelineRequest
+ */
+export class DeleteEvmLogPipelineRequest extends Message<DeleteEvmLogPipelineRequest> {
+  /**
+   * @generated from field: uint32 id = 1;
+   */
+  id = 0;
+
+  constructor(data?: PartialMessage<DeleteEvmLogPipelineRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.DeleteEvmLogPipelineRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteEvmLogPipelineRequest {
+    return new DeleteEvmLogPipelineRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteEvmLogPipelineRequest {
+    return new DeleteEvmLogPipelineRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteEvmLogPipelineRequest {
+    return new DeleteEvmLogPipelineRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteEvmLogPipelineRequest | PlainMessage<DeleteEvmLogPipelineRequest> | undefined, b: DeleteEvmLogPipelineRequest | PlainMessage<DeleteEvmLogPipelineRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteEvmLogPipelineRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.DeleteEvmLogPipelineResponse
+ */
+export class DeleteEvmLogPipelineResponse extends Message<DeleteEvmLogPipelineResponse> {
+  constructor(data?: PartialMessage<DeleteEvmLogPipelineResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.DeleteEvmLogPipelineResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteEvmLogPipelineResponse {
+    return new DeleteEvmLogPipelineResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteEvmLogPipelineResponse {
+    return new DeleteEvmLogPipelineResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteEvmLogPipelineResponse {
+    return new DeleteEvmLogPipelineResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteEvmLogPipelineResponse | PlainMessage<DeleteEvmLogPipelineResponse> | undefined, b: DeleteEvmLogPipelineResponse | PlainMessage<DeleteEvmLogPipelineResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteEvmLogPipelineResponse, a, b);
   }
 }
 
@@ -469,9 +2461,9 @@ export class GetStoresResponse extends Message<GetStoresResponse> {
  */
 export class StartPipelineRequest extends Message<StartPipelineRequest> {
   /**
-   * @generated from field: string id = 1;
+   * @generated from field: uint32 id = 1;
    */
-  id = "";
+  id = 0;
 
   constructor(data?: PartialMessage<StartPipelineRequest>) {
     super();
@@ -481,7 +2473,7 @@ export class StartPipelineRequest extends Message<StartPipelineRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "evm_indexer.v1.StartPipelineRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StartPipelineRequest {
@@ -549,9 +2541,9 @@ export class StartPipelineResponse extends Message<StartPipelineResponse> {
  */
 export class StopPipelineRequest extends Message<StopPipelineRequest> {
   /**
-   * @generated from field: string id = 1;
+   * @generated from field: uint32 id = 1;
    */
-  id = "";
+  id = 0;
 
   constructor(data?: PartialMessage<StopPipelineRequest>) {
     super();
@@ -561,7 +2553,7 @@ export class StopPipelineRequest extends Message<StopPipelineRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "evm_indexer.v1.StopPipelineRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StopPipelineRequest {
@@ -625,388 +2617,514 @@ export class StopPipelineResponse extends Message<StopPipelineResponse> {
 }
 
 /**
- * @generated from message evm_indexer.v1.GetStoreLogsRequest
+ * EvmLogSource
+ *
+ * @generated from message evm_indexer.v1.CreateEvmLogSourceRequest
  */
-export class GetStoreLogsRequest extends Message<GetStoreLogsRequest> {
+export class CreateEvmLogSourceRequest extends Message<CreateEvmLogSourceRequest> {
   /**
-   * @generated from field: string id = 1;
+   * @generated from field: evm_indexer.v1.EvmLogSource source = 1;
    */
-  id = "";
+  source?: EvmLogSource;
 
-  /**
-   * @generated from field: uint64 from_block = 2;
-   */
-  fromBlock = protoInt64.zero;
-
-  /**
-   * @generated from field: uint64 to_block = 3;
-   */
-  toBlock = protoInt64.zero;
-
-  /**
-   * @generated from field: uint64 limit = 4;
-   */
-  limit = protoInt64.zero;
-
-  /**
-   * @generated from field: uint64 offset = 5;
-   */
-  offset = protoInt64.zero;
-
-  constructor(data?: PartialMessage<GetStoreLogsRequest>) {
+  constructor(data?: PartialMessage<CreateEvmLogSourceRequest>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "evm_indexer.v1.GetStoreLogsRequest";
+  static readonly typeName = "evm_indexer.v1.CreateEvmLogSourceRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "from_block", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 3, name: "to_block", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 4, name: "limit", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 5, name: "offset", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 1, name: "source", kind: "message", T: EvmLogSource },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetStoreLogsRequest {
-    return new GetStoreLogsRequest().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEvmLogSourceRequest {
+    return new CreateEvmLogSourceRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetStoreLogsRequest {
-    return new GetStoreLogsRequest().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateEvmLogSourceRequest {
+    return new CreateEvmLogSourceRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetStoreLogsRequest {
-    return new GetStoreLogsRequest().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEvmLogSourceRequest {
+    return new CreateEvmLogSourceRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetStoreLogsRequest | PlainMessage<GetStoreLogsRequest> | undefined, b: GetStoreLogsRequest | PlainMessage<GetStoreLogsRequest> | undefined): boolean {
-    return proto3.util.equals(GetStoreLogsRequest, a, b);
+  static equals(a: CreateEvmLogSourceRequest | PlainMessage<CreateEvmLogSourceRequest> | undefined, b: CreateEvmLogSourceRequest | PlainMessage<CreateEvmLogSourceRequest> | undefined): boolean {
+    return proto3.util.equals(CreateEvmLogSourceRequest, a, b);
   }
 }
 
 /**
- * @generated from message evm_indexer.v1.GetStoreLogsResponse
+ * @generated from message evm_indexer.v1.CreateEvmLogSourceResponse
  */
-export class GetStoreLogsResponse extends Message<GetStoreLogsResponse> {
+export class CreateEvmLogSourceResponse extends Message<CreateEvmLogSourceResponse> {
   /**
-   * @generated from field: bool success = 1;
+   * @generated from field: uint32 id = 1;
    */
-  success = false;
+  id = 0;
 
+  constructor(data?: PartialMessage<CreateEvmLogSourceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.CreateEvmLogSourceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEvmLogSourceResponse {
+    return new CreateEvmLogSourceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateEvmLogSourceResponse {
+    return new CreateEvmLogSourceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEvmLogSourceResponse {
+    return new CreateEvmLogSourceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateEvmLogSourceResponse | PlainMessage<CreateEvmLogSourceResponse> | undefined, b: CreateEvmLogSourceResponse | PlainMessage<CreateEvmLogSourceResponse> | undefined): boolean {
+    return proto3.util.equals(CreateEvmLogSourceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.GetEvmLogSourceRequest
+ */
+export class GetEvmLogSourceRequest extends Message<GetEvmLogSourceRequest> {
   /**
-   * @generated from field: string error = 2;
+   * @generated from field: uint32 id = 1;
    */
-  error = "";
+  id = 0;
 
+  constructor(data?: PartialMessage<GetEvmLogSourceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.GetEvmLogSourceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvmLogSourceRequest {
+    return new GetEvmLogSourceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvmLogSourceRequest {
+    return new GetEvmLogSourceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvmLogSourceRequest {
+    return new GetEvmLogSourceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvmLogSourceRequest | PlainMessage<GetEvmLogSourceRequest> | undefined, b: GetEvmLogSourceRequest | PlainMessage<GetEvmLogSourceRequest> | undefined): boolean {
+    return proto3.util.equals(GetEvmLogSourceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.GetEvmLogSourceResponse
+ */
+export class GetEvmLogSourceResponse extends Message<GetEvmLogSourceResponse> {
   /**
-   * @generated from field: repeated evm_indexer.v1.EvmLog logs = 3;
+   * @generated from field: evm_indexer.v1.EvmLogSource source = 1;
+   */
+  source?: EvmLogSource;
+
+  constructor(data?: PartialMessage<GetEvmLogSourceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.GetEvmLogSourceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source", kind: "message", T: EvmLogSource },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvmLogSourceResponse {
+    return new GetEvmLogSourceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvmLogSourceResponse {
+    return new GetEvmLogSourceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvmLogSourceResponse {
+    return new GetEvmLogSourceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvmLogSourceResponse | PlainMessage<GetEvmLogSourceResponse> | undefined, b: GetEvmLogSourceResponse | PlainMessage<GetEvmLogSourceResponse> | undefined): boolean {
+    return proto3.util.equals(GetEvmLogSourceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.UpdateEvmLogSourceRequest
+ */
+export class UpdateEvmLogSourceRequest extends Message<UpdateEvmLogSourceRequest> {
+  /**
+   * @generated from field: evm_indexer.v1.EvmLogSource source = 1;
+   */
+  source?: EvmLogSource;
+
+  constructor(data?: PartialMessage<UpdateEvmLogSourceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.UpdateEvmLogSourceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source", kind: "message", T: EvmLogSource },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateEvmLogSourceRequest {
+    return new UpdateEvmLogSourceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateEvmLogSourceRequest {
+    return new UpdateEvmLogSourceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateEvmLogSourceRequest {
+    return new UpdateEvmLogSourceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateEvmLogSourceRequest | PlainMessage<UpdateEvmLogSourceRequest> | undefined, b: UpdateEvmLogSourceRequest | PlainMessage<UpdateEvmLogSourceRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateEvmLogSourceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.UpdateEvmLogSourceResponse
+ */
+export class UpdateEvmLogSourceResponse extends Message<UpdateEvmLogSourceResponse> {
+  constructor(data?: PartialMessage<UpdateEvmLogSourceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.UpdateEvmLogSourceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateEvmLogSourceResponse {
+    return new UpdateEvmLogSourceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateEvmLogSourceResponse {
+    return new UpdateEvmLogSourceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateEvmLogSourceResponse {
+    return new UpdateEvmLogSourceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateEvmLogSourceResponse | PlainMessage<UpdateEvmLogSourceResponse> | undefined, b: UpdateEvmLogSourceResponse | PlainMessage<UpdateEvmLogSourceResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateEvmLogSourceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.ListEvmLogSourcesRequest
+ */
+export class ListEvmLogSourcesRequest extends Message<ListEvmLogSourcesRequest> {
+  /**
+   * @generated from field: evm_indexer.v1.Pagination pagination = 1;
+   */
+  pagination?: Pagination;
+
+  constructor(data?: PartialMessage<ListEvmLogSourcesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.ListEvmLogSourcesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pagination", kind: "message", T: Pagination },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEvmLogSourcesRequest {
+    return new ListEvmLogSourcesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEvmLogSourcesRequest {
+    return new ListEvmLogSourcesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEvmLogSourcesRequest {
+    return new ListEvmLogSourcesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListEvmLogSourcesRequest | PlainMessage<ListEvmLogSourcesRequest> | undefined, b: ListEvmLogSourcesRequest | PlainMessage<ListEvmLogSourcesRequest> | undefined): boolean {
+    return proto3.util.equals(ListEvmLogSourcesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.ListEvmLogSourcesResponse
+ */
+export class ListEvmLogSourcesResponse extends Message<ListEvmLogSourcesResponse> {
+  /**
+   * @generated from field: repeated evm_indexer.v1.EvmLogSource sources = 1;
+   */
+  sources: EvmLogSource[] = [];
+
+  constructor(data?: PartialMessage<ListEvmLogSourcesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.ListEvmLogSourcesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "sources", kind: "message", T: EvmLogSource, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEvmLogSourcesResponse {
+    return new ListEvmLogSourcesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEvmLogSourcesResponse {
+    return new ListEvmLogSourcesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEvmLogSourcesResponse {
+    return new ListEvmLogSourcesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListEvmLogSourcesResponse | PlainMessage<ListEvmLogSourcesResponse> | undefined, b: ListEvmLogSourcesResponse | PlainMessage<ListEvmLogSourcesResponse> | undefined): boolean {
+    return proto3.util.equals(ListEvmLogSourcesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.DeleteEvmLogSourceRequest
+ */
+export class DeleteEvmLogSourceRequest extends Message<DeleteEvmLogSourceRequest> {
+  /**
+   * @generated from field: uint32 id = 1;
+   */
+  id = 0;
+
+  constructor(data?: PartialMessage<DeleteEvmLogSourceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.DeleteEvmLogSourceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteEvmLogSourceRequest {
+    return new DeleteEvmLogSourceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteEvmLogSourceRequest {
+    return new DeleteEvmLogSourceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteEvmLogSourceRequest {
+    return new DeleteEvmLogSourceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteEvmLogSourceRequest | PlainMessage<DeleteEvmLogSourceRequest> | undefined, b: DeleteEvmLogSourceRequest | PlainMessage<DeleteEvmLogSourceRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteEvmLogSourceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.DeleteEvmLogSourceResponse
+ */
+export class DeleteEvmLogSourceResponse extends Message<DeleteEvmLogSourceResponse> {
+  constructor(data?: PartialMessage<DeleteEvmLogSourceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.DeleteEvmLogSourceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteEvmLogSourceResponse {
+    return new DeleteEvmLogSourceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteEvmLogSourceResponse {
+    return new DeleteEvmLogSourceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteEvmLogSourceResponse {
+    return new DeleteEvmLogSourceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteEvmLogSourceResponse | PlainMessage<DeleteEvmLogSourceResponse> | undefined, b: DeleteEvmLogSourceResponse | PlainMessage<DeleteEvmLogSourceResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteEvmLogSourceResponse, a, b);
+  }
+}
+
+/**
+ * EvmLog
+ *
+ * @generated from message evm_indexer.v1.ListEvmLogsRequest
+ */
+export class ListEvmLogsRequest extends Message<ListEvmLogsRequest> {
+  /**
+   * @generated from field: evm_indexer.v1.Pagination pagination = 1;
+   */
+  pagination?: Pagination;
+
+  constructor(data?: PartialMessage<ListEvmLogsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "evm_indexer.v1.ListEvmLogsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pagination", kind: "message", T: Pagination },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEvmLogsRequest {
+    return new ListEvmLogsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEvmLogsRequest {
+    return new ListEvmLogsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEvmLogsRequest {
+    return new ListEvmLogsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListEvmLogsRequest | PlainMessage<ListEvmLogsRequest> | undefined, b: ListEvmLogsRequest | PlainMessage<ListEvmLogsRequest> | undefined): boolean {
+    return proto3.util.equals(ListEvmLogsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message evm_indexer.v1.ListEvmLogsResponse
+ */
+export class ListEvmLogsResponse extends Message<ListEvmLogsResponse> {
+  /**
+   * @generated from field: repeated evm_indexer.v1.EvmLog logs = 1;
    */
   logs: EvmLog[] = [];
 
-  constructor(data?: PartialMessage<GetStoreLogsResponse>) {
+  constructor(data?: PartialMessage<ListEvmLogsResponse>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "evm_indexer.v1.GetStoreLogsResponse";
+  static readonly typeName = "evm_indexer.v1.ListEvmLogsResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "success", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 2, name: "error", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "logs", kind: "message", T: EvmLog, repeated: true },
+    { no: 1, name: "logs", kind: "message", T: EvmLog, repeated: true },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetStoreLogsResponse {
-    return new GetStoreLogsResponse().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEvmLogsResponse {
+    return new ListEvmLogsResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetStoreLogsResponse {
-    return new GetStoreLogsResponse().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEvmLogsResponse {
+    return new ListEvmLogsResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetStoreLogsResponse {
-    return new GetStoreLogsResponse().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEvmLogsResponse {
+    return new ListEvmLogsResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetStoreLogsResponse | PlainMessage<GetStoreLogsResponse> | undefined, b: GetStoreLogsResponse | PlainMessage<GetStoreLogsResponse> | undefined): boolean {
-    return proto3.util.equals(GetStoreLogsResponse, a, b);
+  static equals(a: ListEvmLogsResponse | PlainMessage<ListEvmLogsResponse> | undefined, b: ListEvmLogsResponse | PlainMessage<ListEvmLogsResponse> | undefined): boolean {
+    return proto3.util.equals(ListEvmLogsResponse, a, b);
   }
 }
 
 /**
- * @generated from message evm_indexer.v1.GetLatestStoreLogsRequest
+ * EvmTransaction
+ *
+ * @generated from message evm_indexer.v1.ListEvmTransactionsRequest
  */
-export class GetLatestStoreLogsRequest extends Message<GetLatestStoreLogsRequest> {
+export class ListEvmTransactionsRequest extends Message<ListEvmTransactionsRequest> {
   /**
-   * @generated from field: string id = 1;
+   * @generated from field: evm_indexer.v1.Pagination pagination = 1;
    */
-  id = "";
+  pagination?: Pagination;
 
-  /**
-   * @generated from field: uint64 limit = 2;
-   */
-  limit = protoInt64.zero;
-
-  constructor(data?: PartialMessage<GetLatestStoreLogsRequest>) {
+  constructor(data?: PartialMessage<ListEvmTransactionsRequest>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "evm_indexer.v1.GetLatestStoreLogsRequest";
+  static readonly typeName = "evm_indexer.v1.ListEvmTransactionsRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "limit", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 1, name: "pagination", kind: "message", T: Pagination },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLatestStoreLogsRequest {
-    return new GetLatestStoreLogsRequest().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEvmTransactionsRequest {
+    return new ListEvmTransactionsRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLatestStoreLogsRequest {
-    return new GetLatestStoreLogsRequest().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEvmTransactionsRequest {
+    return new ListEvmTransactionsRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLatestStoreLogsRequest {
-    return new GetLatestStoreLogsRequest().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEvmTransactionsRequest {
+    return new ListEvmTransactionsRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetLatestStoreLogsRequest | PlainMessage<GetLatestStoreLogsRequest> | undefined, b: GetLatestStoreLogsRequest | PlainMessage<GetLatestStoreLogsRequest> | undefined): boolean {
-    return proto3.util.equals(GetLatestStoreLogsRequest, a, b);
+  static equals(a: ListEvmTransactionsRequest | PlainMessage<ListEvmTransactionsRequest> | undefined, b: ListEvmTransactionsRequest | PlainMessage<ListEvmTransactionsRequest> | undefined): boolean {
+    return proto3.util.equals(ListEvmTransactionsRequest, a, b);
   }
 }
 
 /**
- * @generated from message evm_indexer.v1.GetLatestStoreLogsResponse
+ * @generated from message evm_indexer.v1.ListEvmTransactionsResponse
  */
-export class GetLatestStoreLogsResponse extends Message<GetLatestStoreLogsResponse> {
+export class ListEvmTransactionsResponse extends Message<ListEvmTransactionsResponse> {
   /**
-   * @generated from field: bool success = 1;
+   * @generated from field: repeated evm_indexer.v1.EvmTransaction transactions = 1;
    */
-  success = false;
+  transactions: EvmTransaction[] = [];
 
-  /**
-   * @generated from field: string error = 2;
-   */
-  error = "";
-
-  /**
-   * @generated from field: repeated evm_indexer.v1.EvmLog logs = 3;
-   */
-  logs: EvmLog[] = [];
-
-  constructor(data?: PartialMessage<GetLatestStoreLogsResponse>) {
+  constructor(data?: PartialMessage<ListEvmTransactionsResponse>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "evm_indexer.v1.GetLatestStoreLogsResponse";
+  static readonly typeName = "evm_indexer.v1.ListEvmTransactionsResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "success", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 2, name: "error", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "logs", kind: "message", T: EvmLog, repeated: true },
+    { no: 1, name: "transactions", kind: "message", T: EvmTransaction, repeated: true },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLatestStoreLogsResponse {
-    return new GetLatestStoreLogsResponse().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEvmTransactionsResponse {
+    return new ListEvmTransactionsResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLatestStoreLogsResponse {
-    return new GetLatestStoreLogsResponse().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEvmTransactionsResponse {
+    return new ListEvmTransactionsResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLatestStoreLogsResponse {
-    return new GetLatestStoreLogsResponse().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEvmTransactionsResponse {
+    return new ListEvmTransactionsResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: GetLatestStoreLogsResponse | PlainMessage<GetLatestStoreLogsResponse> | undefined, b: GetLatestStoreLogsResponse | PlainMessage<GetLatestStoreLogsResponse> | undefined): boolean {
-    return proto3.util.equals(GetLatestStoreLogsResponse, a, b);
-  }
-}
-
-/**
- * @generated from message evm_indexer.v1.GetStoreLogsStreamRequest
- */
-export class GetStoreLogsStreamRequest extends Message<GetStoreLogsStreamRequest> {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id = "";
-
-  /**
-   * @generated from field: uint64 from_block = 2;
-   */
-  fromBlock = protoInt64.zero;
-
-  /**
-   * @generated from field: bool to_latest = 3;
-   */
-  toLatest = false;
-
-  /**
-   * @generated from field: uint64 to_block = 4;
-   */
-  toBlock = protoInt64.zero;
-
-  /**
-   * @generated from field: uint64 batch_size = 5;
-   */
-  batchSize = protoInt64.zero;
-
-  constructor(data?: PartialMessage<GetStoreLogsStreamRequest>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "evm_indexer.v1.GetStoreLogsStreamRequest";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "from_block", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 3, name: "to_latest", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 4, name: "to_block", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 5, name: "batch_size", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetStoreLogsStreamRequest {
-    return new GetStoreLogsStreamRequest().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetStoreLogsStreamRequest {
-    return new GetStoreLogsStreamRequest().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetStoreLogsStreamRequest {
-    return new GetStoreLogsStreamRequest().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: GetStoreLogsStreamRequest | PlainMessage<GetStoreLogsStreamRequest> | undefined, b: GetStoreLogsStreamRequest | PlainMessage<GetStoreLogsStreamRequest> | undefined): boolean {
-    return proto3.util.equals(GetStoreLogsStreamRequest, a, b);
-  }
-}
-
-/**
- * @generated from message evm_indexer.v1.GetStoreLogsStreamResponse
- */
-export class GetStoreLogsStreamResponse extends Message<GetStoreLogsStreamResponse> {
-  /**
-   * @generated from field: repeated evm_indexer.v1.EvmLog logs = 3;
-   */
-  logs: EvmLog[] = [];
-
-  constructor(data?: PartialMessage<GetStoreLogsStreamResponse>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "evm_indexer.v1.GetStoreLogsStreamResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 3, name: "logs", kind: "message", T: EvmLog, repeated: true },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetStoreLogsStreamResponse {
-    return new GetStoreLogsStreamResponse().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetStoreLogsStreamResponse {
-    return new GetStoreLogsStreamResponse().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetStoreLogsStreamResponse {
-    return new GetStoreLogsStreamResponse().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: GetStoreLogsStreamResponse | PlainMessage<GetStoreLogsStreamResponse> | undefined, b: GetStoreLogsStreamResponse | PlainMessage<GetStoreLogsStreamResponse> | undefined): boolean {
-    return proto3.util.equals(GetStoreLogsStreamResponse, a, b);
-  }
-}
-
-/**
- * @generated from message evm_indexer.v1.RefetchPipelineBlockRangeRequest
- */
-export class RefetchPipelineBlockRangeRequest extends Message<RefetchPipelineBlockRangeRequest> {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id = "";
-
-  /**
-   * @generated from field: uint64 from_block = 2;
-   */
-  fromBlock = protoInt64.zero;
-
-  constructor(data?: PartialMessage<RefetchPipelineBlockRangeRequest>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "evm_indexer.v1.RefetchPipelineBlockRangeRequest";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "from_block", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RefetchPipelineBlockRangeRequest {
-    return new RefetchPipelineBlockRangeRequest().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RefetchPipelineBlockRangeRequest {
-    return new RefetchPipelineBlockRangeRequest().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RefetchPipelineBlockRangeRequest {
-    return new RefetchPipelineBlockRangeRequest().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: RefetchPipelineBlockRangeRequest | PlainMessage<RefetchPipelineBlockRangeRequest> | undefined, b: RefetchPipelineBlockRangeRequest | PlainMessage<RefetchPipelineBlockRangeRequest> | undefined): boolean {
-    return proto3.util.equals(RefetchPipelineBlockRangeRequest, a, b);
-  }
-}
-
-/**
- * @generated from message evm_indexer.v1.RefetchPipelineBlockRangeResponse
- */
-export class RefetchPipelineBlockRangeResponse extends Message<RefetchPipelineBlockRangeResponse> {
-  /**
-   * @generated from field: bool success = 1;
-   */
-  success = false;
-
-  /**
-   * @generated from field: string error = 2;
-   */
-  error = "";
-
-  constructor(data?: PartialMessage<RefetchPipelineBlockRangeResponse>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "evm_indexer.v1.RefetchPipelineBlockRangeResponse";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "success", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 2, name: "error", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RefetchPipelineBlockRangeResponse {
-    return new RefetchPipelineBlockRangeResponse().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RefetchPipelineBlockRangeResponse {
-    return new RefetchPipelineBlockRangeResponse().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RefetchPipelineBlockRangeResponse {
-    return new RefetchPipelineBlockRangeResponse().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: RefetchPipelineBlockRangeResponse | PlainMessage<RefetchPipelineBlockRangeResponse> | undefined, b: RefetchPipelineBlockRangeResponse | PlainMessage<RefetchPipelineBlockRangeResponse> | undefined): boolean {
-    return proto3.util.equals(RefetchPipelineBlockRangeResponse, a, b);
+  static equals(a: ListEvmTransactionsResponse | PlainMessage<ListEvmTransactionsResponse> | undefined, b: ListEvmTransactionsResponse | PlainMessage<ListEvmTransactionsResponse> | undefined): boolean {
+    return proto3.util.equals(ListEvmTransactionsResponse, a, b);
   }
 }
 

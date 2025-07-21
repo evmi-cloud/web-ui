@@ -8,6 +8,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { theme } from '../theme';
 import { Navbar } from '../components/navbar/navbar';
 import { ClientProvider } from '../components/providers/client-context';
+import '@mantine/notifications/styles.css';
 
 export default function RootLayout({ children }: { children: any }) {
   const [opened, { toggle }] = useDisclosure();

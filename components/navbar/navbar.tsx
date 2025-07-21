@@ -6,8 +6,10 @@ import {
 import classes from './navbar.module.css';
 
 const data = [
+  { link: '/blockchains', label: 'Blockchains', icon: IconBellRinging },
+  { link: '/abis', label: 'ABIs', icon: IconBellRinging },
+  { link: '/stores', label: 'Stores', icon: IconBellRinging },
   { link: '/pipelines', label: 'Pipelines', icon: IconBellRinging },
-  { link: '', label: 'Orders', icon: IconReceipt2 },
 ];
 
 export function Navbar() {
