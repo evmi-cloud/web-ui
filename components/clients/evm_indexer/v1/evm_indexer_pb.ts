@@ -16,9 +16,9 @@ export class EvmiInstance extends Message<EvmiInstance> {
   id?: number;
 
   /**
-   * @generated from field: uint64 instance_id = 2;
+   * @generated from field: string instance_id = 2;
    */
-  instanceId = protoInt64.zero;
+  instanceId = "";
 
   /**
    * @generated from field: string ipv4 = 3;
@@ -54,7 +54,7 @@ export class EvmiInstance extends Message<EvmiInstance> {
   static readonly typeName = "evm_indexer.v1.EvmiInstance";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
-    { no: 2, name: "instance_id", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 2, name: "instance_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "ipv4", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "created_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
@@ -181,9 +181,9 @@ export class EvmBlockchain extends Message<EvmBlockchain> {
  */
 export class EvmJsonAbi extends Message<EvmJsonAbi> {
   /**
-   * @generated from field: uint32 id = 1;
+   * @generated from field: optional uint32 id = 1;
    */
-  id = 0;
+  id?: number;
 
   /**
    * @generated from field: string contract_name = 2;
@@ -196,14 +196,14 @@ export class EvmJsonAbi extends Message<EvmJsonAbi> {
   content = "";
 
   /**
-   * @generated from field: uint32 created_at = 4;
+   * @generated from field: optional uint32 created_at = 4;
    */
-  createdAt = 0;
+  createdAt?: number;
 
   /**
-   * @generated from field: uint32 updated_at = 5;
+   * @generated from field: optional uint32 updated_at = 5;
    */
-  updatedAt = 0;
+  updatedAt?: number;
 
   /**
    * @generated from field: optional uint32 deleted_at = 6;
@@ -218,11 +218,11 @@ export class EvmJsonAbi extends Message<EvmJsonAbi> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "evm_indexer.v1.EvmJsonAbi";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 2, name: "contract_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "created_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
-    { no: 5, name: "updated_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 4, name: "created_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 5, name: "updated_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 6, name: "deleted_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
@@ -248,9 +248,9 @@ export class EvmJsonAbi extends Message<EvmJsonAbi> {
  */
 export class EvmLogStore extends Message<EvmLogStore> {
   /**
-   * @generated from field: uint32 id = 1;
+   * @generated from field: optional uint32 id = 1;
    */
-  id = 0;
+  id?: number;
 
   /**
    * @generated from field: string identifier = 2;
@@ -273,14 +273,14 @@ export class EvmLogStore extends Message<EvmLogStore> {
   storeConfigJson = "";
 
   /**
-   * @generated from field: uint32 created_at = 6;
+   * @generated from field: optional uint32 created_at = 6;
    */
-  createdAt = 0;
+  createdAt?: number;
 
   /**
-   * @generated from field: uint32 updated_at = 7;
+   * @generated from field: optional uint32 updated_at = 7;
    */
-  updatedAt = 0;
+  updatedAt?: number;
 
   /**
    * @generated from field: optional uint32 deleted_at = 8;
@@ -295,13 +295,13 @@ export class EvmLogStore extends Message<EvmLogStore> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "evm_indexer.v1.EvmLogStore";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 2, name: "identifier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "store_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "store_config_json", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "created_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
-    { no: 7, name: "updated_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 6, name: "created_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 7, name: "updated_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 8, name: "deleted_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
@@ -327,9 +327,9 @@ export class EvmLogStore extends Message<EvmLogStore> {
  */
 export class EvmLogPipeline extends Message<EvmLogPipeline> {
   /**
-   * @generated from field: uint32 id = 1;
+   * @generated from field: optional uint32 id = 1;
    */
-  id = 0;
+  id?: number;
 
   /**
    * @generated from field: string name = 2;
@@ -357,14 +357,14 @@ export class EvmLogPipeline extends Message<EvmLogPipeline> {
   evmLogStoreId = 0;
 
   /**
-   * @generated from field: uint32 created_at = 7;
+   * @generated from field: optional uint32 created_at = 7;
    */
-  createdAt = 0;
+  createdAt?: number;
 
   /**
-   * @generated from field: uint32 updated_at = 8;
+   * @generated from field: optional uint32 updated_at = 8;
    */
-  updatedAt = 0;
+  updatedAt?: number;
 
   /**
    * @generated from field: optional uint32 deleted_at = 9;
@@ -379,14 +379,14 @@ export class EvmLogPipeline extends Message<EvmLogPipeline> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "evm_indexer.v1.EvmLogPipeline";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "evmi_instance_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 5, name: "evm_blockchain_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 6, name: "evm_log_store_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
-    { no: 7, name: "created_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
-    { no: 8, name: "updated_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 7, name: "created_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 8, name: "updated_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 9, name: "deleted_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
@@ -412,9 +412,9 @@ export class EvmLogPipeline extends Message<EvmLogPipeline> {
  */
 export class EvmLogSource extends Message<EvmLogSource> {
   /**
-   * @generated from field: uint32 id = 1;
+   * @generated from field: optional uint32 id = 1;
    */
-  id = 0;
+  id?: number;
 
   /**
    * @generated from field: string type = 2;
@@ -474,14 +474,14 @@ export class EvmLogSource extends Message<EvmLogSource> {
   evmJsonAbiId = 0;
 
   /**
-   * @generated from field: uint32 created_at = 13;
+   * @generated from field: optional uint32 created_at = 13;
    */
-  createdAt = 0;
+  createdAt?: number;
 
   /**
-   * @generated from field: uint32 updated_at = 14;
+   * @generated from field: optional uint32 updated_at = 14;
    */
-  updatedAt = 0;
+  updatedAt?: number;
 
   /**
    * @generated from field: optional uint32 deleted_at = 15;
@@ -496,7 +496,7 @@ export class EvmLogSource extends Message<EvmLogSource> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "evm_indexer.v1.EvmLogSource";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 1, name: "id", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 2, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "start_block", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
     { no: 4, name: "sync_block", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
@@ -508,8 +508,8 @@ export class EvmLogSource extends Message<EvmLogSource> {
     { no: 10, name: "factory_creation_address_log_arg", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 11, name: "evm_log_pipeline_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 12, name: "evm_json_abi_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
-    { no: 13, name: "created_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
-    { no: 14, name: "updated_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 13, name: "created_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 14, name: "updated_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 15, name: "deleted_at", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 

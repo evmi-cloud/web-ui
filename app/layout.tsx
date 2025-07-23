@@ -2,7 +2,7 @@
 
 import '@mantine/core/styles.css';
 
-import { AppShell, Burger, ColorSchemeScript, Group, MantineProvider } from '@mantine/core';
+import { AppShell, Burger, ColorSchemeScript, Group, MantineProvider, Image } from '@mantine/core';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import { useDisclosure } from '@mantine/hooks';
 import { theme } from '../theme';
@@ -34,7 +34,8 @@ export default function RootLayout({ children }: { children: any }) {
               <AppShell.Header>
                 <Group h="100%" px="md">
                   <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-                  <MantineLogo size={30} />
+                  <Image src={'/EVMI_LOGO_WHITE_TRANSPARENT.png'} w={80} h={80} />
+                  <Image src={'/logo-text.png'} w={600} h={20} mt={-17} ml={-20}/>
                 </Group>
               </AppShell.Header>
               <AppShell.Navbar p="md">

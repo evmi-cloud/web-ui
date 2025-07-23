@@ -6,16 +6,11 @@ import { Anchor, Button, Checkbox, Container, Group, Modal, Paper, PasswordInput
 import useClient from '../../components/providers/client-context';
 import { EvmBlockchain, EvmJsonAbi } from '../../components/clients/evm_indexer/v1/evm_indexer_pb';
 import { BlockchainsCreationModal } from '../../components/blockchain-creation-modal/blockchain-creation-modal';
-import { EvmAbiTable } from '../../components/abi-table/abi-table';
+import { EvmAbiTable } from '../../components/abi/abi-table/abi-table';
 
-export default function BlockchainsPage() {
+export default function AbisPage() {
   const [abis, setAbis] = useState<EvmJsonAbi[]>([]);
   const client = useClient();
-
-  const [
-    createModalOpened,
-    { open: openCreateModal, close: closeCreateModal },
-  ] = useDisclosure(false);
 
   useEffect(() => {
     client.client.listEvmJsonAbis({ 
@@ -26,10 +21,16 @@ export default function BlockchainsPage() {
     .catch((error) => console.error(error));
   }, []);
 
+  const refetch = () => {
+    client.client.listEvmJsonAbis({ 
+      pagination: { limit: 50, offset: 0 }
+    }).then((res) => {
+      setAbis(res.abis);
+    })
+    .catch((error) => console.error(error));
+  }
+
   return (
-    <>
-      <BlockchainsCreationModal />
-      <EvmAbiTable data={abis} />
-    </>
+    <EvmAbiTable data={abis} refetch={refetch} />
   );
 }

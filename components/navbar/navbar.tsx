@@ -1,15 +1,21 @@
 import { useState } from 'react';
 import {
+  IconAffiliate,
+  IconAlignBoxLeftStretch,
   IconBellRinging,
+  IconLoadBalancer,
   IconReceipt2,
+  IconServer2,
+  IconTimelineEventText,
 } from '@tabler/icons-react';
 import classes from './navbar.module.css';
 
 const data = [
-  { link: '/blockchains', label: 'Blockchains', icon: IconBellRinging },
-  { link: '/abis', label: 'ABIs', icon: IconBellRinging },
-  { link: '/stores', label: 'Stores', icon: IconBellRinging },
-  { link: '/pipelines', label: 'Pipelines', icon: IconBellRinging },
+  { link: '/abis', label: 'ABIs', icon: IconAlignBoxLeftStretch },
+  { link: '/blockchains', label: 'Blockchains', icon: IconAffiliate },
+  { link: '/stores', label: 'Stores', icon: IconServer2 },
+  { link: '/pipelines', label: 'Pipelines', icon: IconTimelineEventText },
+  { link: '/instances', label: 'Instances', icon: IconLoadBalancer },
 ];
 
 export function Navbar() {
